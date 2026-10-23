@@ -14,15 +14,15 @@
   
   <!-- Modern Monogram Badge -->
   <rect x="330" y="370" width="140" height="140" rx="28" fill="#141418" stroke="#25252E" stroke-width="2"/>
-  <text x="400" y="455" font-family="Inter, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.02em">KA</text>
+  <text x="400" y="455" font-family="Poppins, sans-serif" font-size="52" font-weight="700" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.02em">KA</text>
   <circle cx="438" cy="425" r="4" fill="#FF2626"/>
 
   <!-- Founder Typography -->
-  <text x="400" y="560" font-family="Inter, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.01em">KRISHNA ATTIPATLA</text>
-  <text x="400" y="596" font-family="Inter, sans-serif" font-size="14" font-weight="500" fill="#FF2626" text-anchor="middle" letter-spacing="0.18em">FOUNDER &amp; PRODUCT ARCHITECT</text>
-  <text x="400" y="632" font-family="Inter, sans-serif" font-size="13" font-weight="400" fill="#777777" text-anchor="middle" letter-spacing="0.04em">HackerSpace Technologies</text>
+  <text x="400" y="560" font-family="Poppins, sans-serif" font-size="24" font-weight="600" fill="#FFFFFF" text-anchor="middle" letter-spacing="-0.01em">KRISHNA ATTIPATLA</text>
+  <text x="400" y="596" font-family="Poppins, sans-serif" font-size="14" font-weight="500" fill="#FF2626" text-anchor="middle" letter-spacing="0.18em">FOUNDER &amp; PRODUCT ARCHITECT</text>
+  <text x="400" y="632" font-family="Poppins, sans-serif" font-size="13" font-weight="400" fill="#777777" text-anchor="middle" letter-spacing="0.04em">HackerSpace Technologies</text>
   
   <!-- Subtle instruction marker for user -->
   <rect x="220" y="730" width="360" height="42" rx="21" fill="#16161C" stroke="#262630" stroke-width="1"/>
-  <text x="400" y="756" font-family="Inter, monospace" font-size="11" font-weight="500" fill="#9999AA" text-anchor="middle" letter-spacing="0.06em">EDITORIAL FOUNDER PORTRAIT ASSET</text>
+  <text x="400" y="756" font-family="Poppins, sans-serif" font-size="11" font-weight="500" fill="#9999AA" text-anchor="middle" letter-spacing="0.06em">EDITORIAL FOUNDER PORTRAIT ASSET</text>
 </svg>
