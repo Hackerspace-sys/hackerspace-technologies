@@ -1,6 +1,7 @@
 ---
 import Logo from './Logo.astro';
 import { siteConfig } from '../data/site';
+import { getPath } from '../utils/paths';
 
 interface Props {
   currentPath?: string;
@@ -10,8 +11,9 @@ interface Props {
 const { currentPath = Astro.url.pathname, theme = 'dark' } = Astro.props;
 
 function isActive(href: string): boolean {
-  if (href === '/' && currentPath === '/') return true;
-  if (href !== '/' && currentPath.startsWith(href)) return true;
+  const target = getPath(href);
+  if (href === '/' && (currentPath === '/' || currentPath === target || currentPath === `${target}/`)) return true;
+  if (href !== '/' && (currentPath.startsWith(target) || currentPath.startsWith(href))) return true;
   return false;
 }
 ---
@@ -33,7 +35,7 @@ function isActive(href: string): boolean {
         const active = isActive(item.href);
         return (
           <a
-            href={item.href}
+            href={getPath(item.href)}
             class={`relative px-3.5 py-2 text-sm font-medium transition-colors duration-200 rounded-md focus-visible:ring-2 focus-visible:ring-hst-red ${
               active 
                 ? 'text-white font-semibold' 
@@ -53,7 +55,7 @@ function isActive(href: string): boolean {
     <!-- Header Action CTA -->
     <div class="hidden md:flex items-center gap-4">
       <a
-        href="/contact"
+        href={getPath('/contact')}
         class="group relative inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white bg-transparent border border-white/20 hover:border-hst-red transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-hst-red"
       >
         <span class="absolute inset-0 bg-hst-red translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
@@ -101,7 +103,7 @@ function isActive(href: string): boolean {
           const active = isActive(item.href);
           return (
             <a
-              href={item.href}
+              href={getPath(item.href)}
               class={`flex items-center justify-between py-3 text-xl font-medium tracking-tight border-b border-white/5 transition-colors ${
                 active ? 'text-hst-red font-semibold' : 'text-neutral-300 hover:text-white'
               }`}
@@ -116,7 +118,7 @@ function isActive(href: string): boolean {
 
       <div class="pt-8 border-t border-white/10 flex flex-col space-y-4">
         <a
-          href="/contact"
+          href={getPath('/contact')}
           class="w-full py-4 text-center text-sm font-semibold tracking-wider uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm shadow-lg shadow-hst-red/20"
         >
           Have an Idea Worth Building?

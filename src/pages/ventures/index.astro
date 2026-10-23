@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import SectionHeader from '../../components/SectionHeader.astro';
 import VentureCard from '../../components/VentureCard.astro';
 import { ventures } from '../../data/ventures';
+import { getPath } from '../../utils/paths';
 ---
 
 <BaseLayout
@@ -138,7 +139,7 @@ import { ventures } from '../../data/ventures';
           </p>
         </div>
         <a
-          href="/contact"
+          href={getPath('/contact')}
           class="px-6 py-3 text-xs font-semibold uppercase tracking-wider bg-hst-red hover:bg-hst-red-hover text-white rounded-sm whitespace-nowrap transition-colors"
         >
           Partnership Inquiries

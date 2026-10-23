@@ -8,6 +8,7 @@ import { ventures } from '../data/ventures';
 import { capabilities, approachSteps } from '../data/capabilities';
 import { founderData } from '../data/founder';
 import { siteConfig } from '../data/site';
+import { getPath } from '../utils/paths';
 
 // Select top ventures for homepage showcase
 const featuredVentures = ventures.filter(v => v.featured);
@@ -56,7 +57,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
           <!-- Action CTAs -->
           <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
             <a
-              href="/ventures"
+              href={getPath('/ventures')}
               class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-sm shadow-xl shadow-hst-red/25 focus-visible:ring-2 focus-visible:ring-hst-red"
             >
               <span>Explore Our Ventures</span>
@@ -64,7 +65,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
             </a>
 
             <a
-              href="/founder"
+              href={getPath('/founder')}
               class="inline-flex items-center justify-center px-7 py-4 text-xs font-semibold tracking-widest uppercase text-neutral-300 hover:text-white bg-transparent border border-white/20 hover:border-white transition-all duration-300 rounded-sm focus-visible:ring-2 focus-visible:ring-white"
             >
               Meet the Founder
@@ -201,7 +202,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
           theme="light"
         />
         <a 
-          href="/ventures" 
+          href={getPath('/ventures')} 
           class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:text-hst-red-hover transition-colors"
         >
           <span>Explore All 9 Ventures</span>
@@ -226,7 +227,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
           <p class="text-sm text-neutral-400 mt-1">We actively evaluate technical partnerships and collaborative build initiatives.</p>
         </div>
         <a
-          href="/contact"
+          href={getPath('/contact')}
           class="px-6 py-3 text-xs font-semibold tracking-wider uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-sm transition-colors whitespace-nowrap"
         >
           Initiate Venture Dialog
@@ -345,7 +346,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
         <div class="lg:col-span-5 relative">
           <div class="relative rounded-2xl overflow-hidden border border-neutral-200 bg-[#0E0E12] shadow-2xl group">
             <img 
-              src={founderData.placeholderPath} 
+              src={getPath(founderData.placeholderPath)} 
               alt="Krishna Attipatla — Founder, HackerSpace Technologies"
               class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-102"
               loading="lazy"
@@ -394,7 +395,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
 
           <div class="pt-4 flex flex-wrap items-center gap-6">
             <a
-              href="/founder"
+              href={getPath('/founder')}
               class="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold tracking-widest uppercase text-white bg-neutral-900 hover:bg-neutral-800 rounded-sm transition-colors"
             >
               <span>Read Full Founder Biography</span>
@@ -402,7 +403,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
             </a>
 
             <a
-              href="/contact"
+              href={getPath('/contact')}
               class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:underline"
             >
               <span>Direct Inquiries</span>
@@ -436,7 +437,7 @@ const otherVentures = ventures.filter(v => !v.featured).slice(0, 4);
 
       <div class="inline-flex items-center justify-center gap-4">
         <a
-          href="/ventures"
+          href={getPath('/ventures')}
           class="px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm shadow-xl shadow-hst-red/20"
         >
           Explore the Full Ecosystem

@@ -1,5 +1,6 @@
 ---
 import { siteConfig } from '../data/site';
+import { getPath } from '../utils/paths';
 
 interface Props {
   title?: string;
@@ -53,8 +54,8 @@ const finalSchema = schemaData || defaultOrganizationSchema;
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="generator" content={Astro.generator} />
-<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="icon" type="image/svg+xml" href={getPath('/favicon.svg')} />
+<link rel="sitemap" href={getPath('/sitemap-index.xml')} />
 <link rel="canonical" href={canonicalUrl} />
 
 <!-- Primary Meta Tags -->

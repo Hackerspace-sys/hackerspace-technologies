@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { founderData } from '../data/founder';
+import { getPath } from '../utils/paths';
 ---
 
 <BaseLayout
@@ -35,7 +36,7 @@ import { founderData } from '../data/founder';
         <div class="lg:col-span-5 sticky top-28">
           <div class="rounded-2xl overflow-hidden border border-neutral-200 bg-[#0E0E12] shadow-2xl">
             <img
-              src={founderData.placeholderPath}
+              src={getPath(founderData.placeholderPath)}
               alt={`${founderData.name} — Founder, HackerSpace Technologies`}
               class="w-full h-auto object-cover"
               width="800"
@@ -51,7 +52,7 @@ import { founderData } from '../data/founder';
               For direct technical dialogue, strategic venture partnerships, or founder inquiries:
             </p>
             <a 
-              href="/contact" 
+              href={getPath('/contact')} 
               class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:underline"
             >
               <span>Transmit Inquiry to Founder's Desk</span>

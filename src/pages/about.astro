@@ -2,6 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
 import { siteConfig } from '../data/site';
+import { getPath } from '../utils/paths';
 
 const principles = [
   {
@@ -129,7 +130,7 @@ const principles = [
             </li>
           </ul>
           <div class="pt-2">
-            <a href="/ventures" class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:underline">
+            <a href={getPath('/ventures')} class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:underline">
               <span>Inspect Venture Portfolio</span>
               <span>→</span>
             </a>
@@ -173,7 +174,7 @@ const principles = [
         Explore partnership opportunities, product collaborations, or reach out to our team directly.
       </p>
       <div class="pt-2">
-        <a href="/contact" class="px-8 py-3.5 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-sm transition-colors inline-block shadow-lg shadow-hst-red/20">
+        <a href={getPath('/contact')} class="px-8 py-3.5 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-sm transition-colors inline-block shadow-lg shadow-hst-red/20">
           Initiate Contact
         </a>
       </div>

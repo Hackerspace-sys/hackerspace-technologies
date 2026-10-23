@@ -1,4 +1,6 @@
 ---
+import { getPath } from '../utils/paths';
+
 interface Props {
   variant?: 'dark' | 'light';
   showWordmark?: boolean;
@@ -31,7 +33,7 @@ const wordmarkClass = wordmarkColor === 'white'
 
 {asLink ? (
   <a 
-    href="/" 
+    href={getPath('/')} 
     class={`group inline-flex items-center gap-3.5 focus-visible:ring-2 focus-visible:ring-hst-red focus-visible:ring-offset-2 rounded-sm transition-opacity duration-200 hover:opacity-90 ${className}`}
     aria-label="HackerSpace Technologies — Home"
   >

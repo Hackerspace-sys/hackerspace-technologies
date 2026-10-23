@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { ventures, getAllVentures, getVentureBySlug, type Venture } from '../../data/ventures';
+import { getPath } from '../../utils/paths';
 
 export async function getStaticPaths() {
   const allVentures = getAllVentures();
@@ -56,7 +57,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
       <!-- Back Link -->
       <div class="mb-8">
         <a 
-          href="/ventures" 
+          href={getPath('/ventures')} 
           class="inline-flex items-center gap-2 text-xs font-mono uppercase tracking-widest text-neutral-400 hover:text-white transition-colors"
         >
           <span>← Back to Ventures Ecosystem</span>
@@ -202,7 +203,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
               Interested in strategic integration, enterprise licensing, or technical partnership on this specific venture?
             </p>
             <a
-              href="/contact"
+              href={getPath('/contact')}
               class="w-full inline-block text-center py-3 px-4 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm"
             >
               Initiate Dialogue →
@@ -211,7 +212,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
 
           <!-- Back to Ventures -->
           <div class="text-center">
-            <a href="/ventures" class="text-xs font-mono uppercase text-neutral-500 hover:text-neutral-900 transition-colors">
+            <a href={getPath('/ventures')} class="text-xs font-mono uppercase text-neutral-500 hover:text-neutral-900 transition-colors">
               ← Return to all 9 ventures
             </a>
           </div>
@@ -229,7 +230,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
         <h2 class="text-xl font-bold tracking-tight text-neutral-900">
           Other Initiatives in the Ecosystem
         </h2>
-        <a href="/ventures" class="text-xs font-mono uppercase font-semibold text-hst-red hover:underline">
+        <a href={getPath('/ventures')} class="text-xs font-mono uppercase font-semibold text-hst-red hover:underline">
           View All →
         </a>
       </div>
@@ -242,14 +243,14 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
               <span class="text-[10px] font-mono text-hst-red font-semibold">{rel.status}</span>
             </div>
             <h3 class="text-lg font-bold text-neutral-900">
-              <a href={`/ventures/${rel.slug}`} class="hover:text-hst-red transition-colors">
+              <a href={getPath(`/ventures/${rel.slug}`)} class="hover:text-hst-red transition-colors">
                 {rel.name}
               </a>
             </h3>
             <p class="text-xs text-neutral-600 line-clamp-2 leading-relaxed">
               {rel.oneLiner}
             </p>
-            <a href={`/ventures/${rel.slug}`} class="inline-flex items-center gap-1 text-xs font-mono font-semibold text-hst-red hover:underline">
+            <a href={getPath(`/ventures/${rel.slug}`)} class="inline-flex items-center gap-1 text-xs font-mono font-semibold text-hst-red hover:underline">
               Inspect Dossier →
             </a>
           </div>
