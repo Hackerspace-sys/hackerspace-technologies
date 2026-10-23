@@ -20,7 +20,7 @@ function isActive(href: string): boolean {
 
 <header 
   id="main-header"
-  class="sticky top-0 z-50 w-full transition-all duration-300 bg-[#000000]/75 backdrop-blur-2xl border-b border-white/[0.04]"
+  class="sticky top-0 z-50 w-full transition-all duration-300 bg-[#000000]"
   data-theme={theme}
 >
   <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -52,11 +52,11 @@ function isActive(href: string): boolean {
       })}
     </nav>
 
-    <!-- Header Action CTA -->
+    <!-- Header Action CTA (Solid Pill) -->
     <div class="hidden md:flex items-center gap-4">
       <a
         href={getPath('/contact')}
-        class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white bg-white/[0.08] hover:bg-hst-red transition-all duration-300 rounded-full shadow-lg hover:shadow-hst-red/25 focus-visible:ring-2 focus-visible:ring-hst-red"
+        class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white bg-[#161616] hover:bg-hst-red transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-hst-red"
       >
         <span>Let's Connect</span>
         <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -88,7 +88,7 @@ function isActive(href: string): boolean {
   <!-- Mobile Drawer Overlay & Panel -->
   <div 
     id="mobile-menu-drawer" 
-    class="fixed inset-0 top-20 z-40 bg-[#000000]/98 backdrop-blur-2xl md:hidden transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
+    class="fixed inset-0 top-20 z-40 bg-[#000000] md:hidden transition-all duration-300 opacity-0 pointer-events-none translate-x-full"
     aria-hidden="true"
   >
     <div class="max-w-site mx-auto px-6 py-8 flex flex-col justify-between h-[calc(100vh-5rem)]">

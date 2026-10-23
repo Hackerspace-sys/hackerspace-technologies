@@ -11,7 +11,7 @@ const isDark = theme !== 'light';
 ---
 
 <div class={`p-6 sm:p-10 rounded-2xl ${
-  isDark ? 'bg-gradient-to-b from-white/[0.04] to-white/[0.01] shadow-2xl backdrop-blur-xl' : 'bg-white shadow-sm'
+  isDark ? 'bg-[#121212] shadow-2xl' : 'bg-white shadow-sm'
 }`}>
   <div class="mb-8">
     <h3 class={`text-2xl sm:text-3xl font-bold tracking-tight mb-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -46,7 +46,7 @@ const isDark = theme !== 'light';
           placeholder="Alex / Lakshmi"
           class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
+              ? 'bg-[#181818] focus:bg-[#202020] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -68,7 +68,7 @@ const isDark = theme !== 'light';
           placeholder="name@domain.com"
           class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
+              ? 'bg-[#181818] focus:bg-[#202020] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -92,7 +92,7 @@ const isDark = theme !== 'light';
           placeholder="Company or institution"
           class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
+              ? 'bg-[#181818] focus:bg-[#202020] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -109,7 +109,7 @@ const isDark = theme !== 'light';
           name="inquiryType"
           class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white' 
+              ? 'bg-[#181818] focus:bg-[#202020] text-white' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 focus:border-transparent'
           }`}
         >
@@ -135,7 +135,7 @@ const isDark = theme !== 'light';
         placeholder="Describe the opportunity, technical inquiry, or collaboration idea..."
         class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
           isDark 
-            ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
+            ? 'bg-[#181818] focus:bg-[#202020] text-white placeholder-neutral-500' 
             : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
         }`}
       ></textarea>
@@ -157,24 +157,24 @@ const isDark = theme !== 'light';
     </div>
     <p class="text-xs text-hst-red hidden field-error" id="consent-error">You must accept the privacy policy to proceed.</p>
 
-    <!-- Submission feedback boxes -->
-    <div id="form-success" class="hidden p-4 rounded-md bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 text-sm">
-      <div class="flex items-center gap-2 font-semibold mb-1">
-        <span>✓</span>
+    <!-- Submission feedback boxes (Solid Fill) -->
+    <div id="form-success" class="hidden p-4 rounded-xl bg-[#181818] text-white text-sm">
+      <div class="flex items-center gap-2 font-semibold mb-1 text-white">
+        <span class="text-hst-red font-bold">✓</span>
         <span>Inquiry Prepared Successfully</span>
       </div>
-      <p class="text-xs">
+      <p class="text-xs text-neutral-300">
         Your transmission has been processed. A mail client dispatch has also been initiated for redundant delivery. We will respond deliberately.
       </p>
     </div>
 
-    <div id="form-error" class="hidden p-4 rounded-md bg-hst-red/10 border border-hst-red/30 text-hst-red text-sm">
-      <div class="flex items-center gap-2 font-semibold mb-1">
+    <div id="form-error" class="hidden p-4 rounded-xl bg-[#181818] text-hst-red text-sm">
+      <div class="flex items-center gap-2 font-semibold mb-1 text-hst-red">
         <span>⚠</span>
         <span>Validation or Dispatch Notice</span>
       </div>
-      <p class="text-xs" id="form-error-msg">
-        Please verify all required fields. You can also reach our desk directly at <a href="mailto:contact@hackerspace.technologies" class="underline font-mono">contact@hackerspace.technologies</a>.
+      <p class="text-xs text-neutral-300" id="form-error-msg">
+        Please verify all required fields. You can also reach our desk directly at <a href="mailto:contact@hackerspace.technologies" class="underline font-mono text-white">contact@hackerspace.technologies</a>.
       </p>
     </div>
 

@@ -22,23 +22,23 @@ const relatedVentures = getAllVentures()
   .filter((v) => v.slug !== venture.slug)
   .slice(0, 3);
 
-// Status color mapping (pill style without borders)
+// Status color mapping (Solid fill colors only)
 const statusBadges = {
   live: {
-    bg: 'bg-emerald-500/10 text-emerald-400',
-    dot: 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]'
+    bg: 'bg-[#FF2626] text-white font-semibold',
+    dot: 'bg-white'
   },
   'in-development': {
-    bg: 'bg-amber-500/10 text-amber-400',
-    dot: 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]'
+    bg: 'bg-[#222222] text-white',
+    dot: 'bg-[#FF2626]'
   },
   concept: {
-    bg: 'bg-blue-500/10 text-blue-400',
-    dot: 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.6)]'
+    bg: 'bg-[#1C1C1C] text-neutral-300',
+    dot: 'bg-neutral-500'
   },
   incubation: {
-    bg: 'bg-purple-500/10 text-purple-400',
-    dot: 'bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.6)]'
+    bg: 'bg-[#222222] text-white',
+    dot: 'bg-[#FF2626]'
   }
 };
 
@@ -51,10 +51,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
   theme="dark"
 >
   <!-- Dossier Header Section -->
-  <header class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden bg-grid-subtle-dark">
-    <!-- Ambient Radial Glow -->
-    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,38,38,0.2),transparent_75%)] pointer-events-none"></div>
-
+  <header class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Back Link -->
@@ -80,7 +77,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
             </span>
           </div>
 
-          <h1 class="text-5xl sm:text-7xl font-extrabold tracking-[-0.04em] leading-tight text-gradient-silver">
+          <h1 class="text-5xl sm:text-7xl font-extrabold tracking-[-0.04em] leading-tight text-white">
             {venture.name}
           </h1>
 
@@ -89,8 +86,8 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
           </p>
         </div>
 
-        <!-- System Specifications Pill Box (Borderless) -->
-        <div class="lg:col-span-4 p-7 rounded-2xl bg-white/[0.04] backdrop-blur-md space-y-4 shadow-2xl">
+        <!-- System Specifications Pill Box (Solid Fill) -->
+        <div class="lg:col-span-4 p-7 rounded-2xl bg-[#121212] space-y-4 shadow-2xl">
           <span class="text-[11px] font-mono tracking-widest uppercase text-neutral-400 block pb-2">
             System Specifications
           </span>
@@ -151,9 +148,9 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
             </div>
 
             <!-- Solution -->
-            <div class="p-8 rounded-2xl bg-gradient-to-b from-hst-red/[0.08] to-transparent text-white space-y-4 shadow-xl">
+            <div class="card-fluid p-8 rounded-2xl text-white space-y-4">
               <span class="text-xs font-mono font-bold uppercase tracking-wider text-hst-red flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-hst-red shadow-[0_0_8px_rgba(255,38,38,0.8)]"></span>
+                <span class="w-2 h-2 rounded-full bg-hst-red"></span>
                 The HST Solution
               </span>
               <p class="text-sm text-neutral-300 leading-relaxed">
@@ -184,21 +181,21 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
         <aside class="lg:col-span-4 space-y-8 sticky top-28">
           
           <!-- Technology Disciplines Card -->
-          <div class="p-7 rounded-2xl bg-white/[0.03] backdrop-blur-md space-y-4">
+          <div class="p-7 rounded-2xl bg-[#121212] space-y-4">
             <h3 class="text-xs font-mono font-bold tracking-widest uppercase text-white">
               Engineering Disciplines
             </h3>
             <div class="flex flex-wrap gap-2">
               {venture.techDisciplines.map((disc) => (
-                <span class="text-xs font-mono px-3 py-1 rounded-full bg-white/[0.05] text-neutral-300">
+                <span class="text-xs font-mono px-3 py-1 rounded-full bg-[#1C1C1C] text-neutral-300">
                   {disc}
                 </span>
               ))}
             </div>
           </div>
 
-          <!-- Inquiry Action Box -->
-          <div class="p-8 rounded-3xl bg-gradient-to-b from-white/[0.05] to-transparent text-white space-y-4 shadow-2xl">
+          <!-- Inquiry Action Box (Solid Fill) -->
+          <div class="p-8 rounded-3xl bg-[#121212] text-white space-y-4 shadow-2xl">
             <span class="text-xs font-mono uppercase text-hst-red tracking-widest block font-bold">
               Collaborate on {venture.name}
             </span>
@@ -207,7 +204,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
             </p>
             <a
               href={getPath('/contact')}
-              class="w-full inline-block text-center py-4 px-6 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-all rounded-full shadow-xl shadow-hst-red/30 hover:scale-105 active:scale-95"
+              class="w-full inline-block text-center py-4 px-6 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-all rounded-full hover:scale-105 active:scale-95"
             >
               Initiate Dialogue →
             </a>

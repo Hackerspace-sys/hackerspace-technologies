@@ -10,23 +10,23 @@ interface Props {
 
 const { venture, theme = 'dark', featuredLayout = false } = Astro.props;
 
-// Status badges (pill style without harsh borders)
+// Status badges (Solid fill colors only — zero muddy translucency)
 const statusBadges = {
   live: {
-    bg: 'bg-emerald-500/10 text-emerald-400',
-    dot: 'bg-emerald-400 shadow-[0_0_8px_rgba(52,211,153,0.6)]'
+    bg: 'bg-[#FF2626] text-white font-semibold',
+    dot: 'bg-white'
   },
   'in-development': {
-    bg: 'bg-amber-500/10 text-amber-400',
-    dot: 'bg-amber-400 shadow-[0_0_8px_rgba(251,191,36,0.6)]'
+    bg: 'bg-[#222222] text-white',
+    dot: 'bg-[#FF2626]'
   },
   concept: {
-    bg: 'bg-blue-500/10 text-blue-400',
-    dot: 'bg-blue-400 shadow-[0_0_8px_rgba(96,165,250,0.6)]'
+    bg: 'bg-[#1C1C1C] text-neutral-300',
+    dot: 'bg-neutral-500'
   },
   incubation: {
-    bg: 'bg-purple-500/10 text-purple-400',
-    dot: 'bg-purple-400 shadow-[0_0_8px_rgba(192,132,252,0.6)]'
+    bg: 'bg-[#222222] text-white',
+    dot: 'bg-[#FF2626]'
   }
 };
 
@@ -34,23 +34,17 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
 ---
 
 <article 
-  class={`group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-gradient-to-b from-white/[0.04] to-transparent hover:from-white/[0.08] hover:to-white/[0.02] transition-all duration-500 hover:-translate-y-1.5 backdrop-blur-sm overflow-hidden ${
+  class={`group relative flex flex-col justify-between p-7 sm:p-8 rounded-2xl bg-[#121212] hover:bg-[#181818] transition-all duration-300 hover:-translate-y-1 overflow-hidden ${
     featuredLayout ? 'lg:col-span-2' : ''
   }`}
 >
-  <!-- Top Animated Laser Accent on Hover -->
-  <div class="absolute top-0 inset-x-0 h-[2px] bg-gradient-to-r from-transparent via-hst-red to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
-  <!-- Ambient Card Radial Glow on Hover -->
-  <div class="absolute -top-24 -right-24 w-48 h-48 bg-hst-red/10 rounded-full blur-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
-
   <div>
-    <!-- Top Meta Row: Category + Status Pill -->
+    <!-- Top Meta Row: Category + Status Pill (Solid Fill Coloring) -->
     <div class="flex items-center justify-between gap-2 mb-6">
       <span class="text-xs font-mono font-medium tracking-wider uppercase text-neutral-400 group-hover:text-neutral-300 transition-colors">
         {venture.category}
       </span>
-      <span class={`inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono ${badge.bg}`}>
+      <span class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono ${badge.bg}`}>
         <span class={`w-1.5 h-1.5 rounded-full ${badge.dot}`}></span>
         <span>{venture.status}</span>
       </span>
@@ -75,7 +69,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
   <div class="flex flex-wrap items-center justify-between gap-4 pt-4">
     <div class="flex flex-wrap gap-2">
       {venture.techDisciplines.slice(0, 3).map((disc) => (
-        <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-white/[0.04] text-neutral-300 group-hover:bg-white/[0.08] transition-colors">
+        <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#1C1C1C] text-neutral-300 group-hover:bg-[#252525] group-hover:text-white transition-colors">
           {disc}
         </span>
       ))}

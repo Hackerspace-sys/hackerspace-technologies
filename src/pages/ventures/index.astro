@@ -12,10 +12,10 @@ import { getPath } from '../../utils/paths';
   theme="dark"
 >
   <!-- Page Header -->
-  <section class="py-20 lg:py-28 bg-[#000000] text-white border-b border-white/10 bg-grid-subtle-dark">
+  <section class="py-20 lg:py-28 bg-[#000000] text-white">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="max-w-3xl space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#121212] text-xs font-mono tracking-widest uppercase text-hst-red">
           <span>// Portfolio Directory</span>
         </div>
         <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08]">
@@ -32,14 +32,14 @@ import { getPath } from '../../utils/paths';
   <section class="py-20 bg-[#000000] text-white min-h-[70vh]">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Filter Controls Bar (No harsh borders) -->
+      <!-- Filter Controls Bar (Solid Fills) -->
       <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8">
-        <!-- Category Filter Buttons (Capsule Pill Bar) -->
-        <div class="inline-flex p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md flex-wrap gap-1" id="category-filters" role="tablist">
+        <!-- Category Filter Buttons (Solid Pill Bar) -->
+        <div class="inline-flex p-1.5 rounded-full bg-[#121212] flex-wrap gap-1" id="category-filters" role="tablist">
           <button
             type="button"
             data-filter="all"
-            class="filter-btn active px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 bg-hst-red text-white shadow-lg shadow-hst-red/30"
+            class="filter-btn active px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 bg-hst-red text-white"
           >
             All Ventures ({ventures.length})
           </button>
@@ -80,13 +80,13 @@ import { getPath } from '../../utils/paths';
           </button>
         </div>
 
-        <!-- Quick Search Bar (Borderless Pill) -->
+        <!-- Quick Search Bar (Solid Pill) -->
         <div class="w-full md:w-72 relative">
           <input
             type="text"
             id="venture-search"
             placeholder="Search by keyword, tag..."
-            class="w-full px-5 py-3 text-xs font-mono rounded-full bg-white/[0.05] text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-hst-red transition-all"
+            class="w-full px-5 py-3 text-xs font-mono rounded-full bg-[#121212] text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-hst-red transition-all"
             aria-label="Search ventures"
           />
           <span class="absolute right-4 top-3 text-neutral-500 text-xs">⌕</span>

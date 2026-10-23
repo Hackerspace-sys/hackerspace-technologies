@@ -21,36 +21,25 @@ const otherVentures = ventures.filter(v => !v.featured);
   theme="dark"
 >
   <!-- ========================================================================= -->
-  <!-- HERO SECTION (Cinematic Linear-Style Open Canvas with Ambient Spotlight)  -->
+  <!-- HERO SECTION (Pure Black Canvas with Solid Fill Typography & Monogram)    -->
   <!-- ========================================================================= -->
   <section class="relative min-h-[96vh] flex flex-col justify-center items-center bg-[#000000] text-white overflow-hidden pt-28 pb-20">
-    <!-- Deep Ambient Radial Glows (No harsh boxes) -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,38,38,0.22),transparent_75%)]"></div>
-      <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-[140px]"></div>
-      <div class="absolute bottom-10 right-1/4 w-[600px] h-[400px] bg-hst-red/[0.08] rounded-full blur-[160px]"></div>
-    </div>
-
-    <!-- Subtle Technical Background Grid -->
-    <div class="absolute inset-0 bg-grid-subtle-dark opacity-40 pointer-events-none" aria-hidden="true"></div>
-
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
       
-      <!-- Live Telemetry Status Pill (Borderless Capsule) -->
-      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.08] transition-all text-xs font-mono tracking-[0.2em] uppercase text-neutral-300 mb-8 backdrop-blur-md animate-fade-in shadow-xl">
+      <!-- Live Telemetry Status Pill (Solid Fill Pill) -->
+      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-[#121212] text-xs font-mono tracking-[0.2em] uppercase text-neutral-300 mb-8 animate-fade-in">
         <span class="flex h-2 w-2 relative">
-          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-hst-red opacity-80"></span>
-          <span class="relative inline-flex rounded-full h-2 w-2 bg-hst-red shadow-[0_0_8px_rgba(255,38,38,1)]"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-hst-red"></span>
         </span>
         <span class="font-semibold text-white">HST Core Engine</span>
         <span class="text-neutral-600">//</span>
         <span class="text-neutral-400">Independent Venture Studio</span>
       </div>
 
-      <!-- Grand Cinematic Display Headline -->
-      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-[-0.04em] leading-[1.02] text-gradient-silver text-balance max-w-5xl mx-auto mb-8 animate-fade-in">
+      <!-- Grand Display Headline (Solid pure white & solid HST Red fill) -->
+      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-[-0.04em] leading-[1.02] text-white text-balance max-w-5xl mx-auto mb-8 animate-fade-in">
         Building Technology.<br />
-        <span class="text-gradient-red">Creating Possibilities.</span>
+        <span class="text-hst-red">Creating Possibilities.</span>
       </h1>
 
       <!-- Fluid Supporting Copy -->
@@ -58,11 +47,11 @@ const otherVentures = ventures.filter(v => !v.featured);
         HackerSpace Technologies builds ambitious digital products, scalable software platforms, and technology-driven ventures across software, clean mobility, and emerging industries.
       </p>
 
-      <!-- Sleek Dual Action Buttons (Rounded-Full Pill Geometry) -->
+      <!-- Sleek Dual Action Buttons (Solid Fills) -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in">
         <a
           href={getPath('/ventures')}
-          class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-full shadow-2xl shadow-hst-red/40 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-hst-red"
+          class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-full hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-hst-red"
         >
           <span>Explore Our Ventures</span>
           <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1.5">→</span>
@@ -70,24 +59,21 @@ const otherVentures = ventures.filter(v => !v.featured);
 
         <a
           href={getPath('/founder')}
-          class="inline-flex items-center justify-center px-8 py-4 text-xs font-semibold tracking-widest uppercase text-neutral-300 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] backdrop-blur-md transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-white"
+          class="inline-flex items-center justify-center px-8 py-4 text-xs font-semibold tracking-widest uppercase text-white bg-[#161616] hover:bg-[#222222] transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-white"
         >
           Meet the Founder
         </a>
       </div>
 
-      <!-- Linear-Style Floating Hologram & Monogram Sculpture (Zero boxy borders) -->
+      <!-- Linear-Style Floating Monogram Sculpture (Zero boxy borders, sharp on pure black) -->
       <div class="relative max-w-3xl mx-auto pt-6">
-        <!-- Laser Sweep Line -->
-        <div class="laser-track mb-8"></div>
-
         <div class="relative py-8 flex flex-col items-center justify-center">
-          <!-- Monogram illuminated with ambient red drop shadow -->
+          <!-- Monogram (Solid crisp vector on pure black, zero drop-shadow glow) -->
           <svg 
             viewBox="0 0 1080 360" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
-            class="w-full max-w-md filter drop-shadow-[0_20px_50px_rgba(255,38,38,0.35)] animate-float"
+            class="w-full max-w-md animate-float"
           >
             <!-- Red T Accent -->
             <path d="M970.404 0.212836C895.395 0.22255 803.175 0.297197 728.166 0.209282L682.142 70.6929C722.477 70.6981 762.812 70.6525 803.146 70.6392C804.276 70.6388 805.405 70.7454 807.035 70.8272C765.512 165.566 726.812 261.856 686.592 356.908C686.079 358.121 686.866 359.427 688.182 359.361C688.762 359.332 689.293 359.299 689.728 359.313C694.058 359.456 698.314 359.253 702.646 359.266C716.009 359.306 729.372 359.209 742.734 359.313C749.472 359.365 756.21 359.698 762.944 359.988C765.042 360.077 766.82 359.718 767.674 357.605C769.914 352.066 772.11 346.511 774.306 340.955L774.868 339.534C777.471 332.95 779.997 326.334 782.665 319.777C786.275 310.902 790.042 302.09 793.644 293.212C796.979 284.996 800.16 276.719 803.456 268.488C805.923 262.328 808.491 256.209 810.968 250.053C813.618 243.465 816.154 236.831 818.85 230.261C821.948 222.711 825.206 215.226 828.322 207.683C830.985 201.238 833.518 194.74 836.158 188.286C839.34 180.509 842.601 172.763 845.777 164.984C848.862 157.428 851.858 149.836 854.94 142.278C858.109 134.51 861.372 126.78 864.525 119.005C867.598 111.428 870.505 103.783 873.629 96.2265C876.747 88.6881 880.074 81.2363 883.247 73.7205L883.28 73.6429C884.515 70.7182 884.561 70.6082 887.602 70.6081C933.717 70.607 979.831 70.5613 1025.94 70.7017C1029.59 70.7128 1031.69 69.2885 1033.63 66.5806C1038.52 59.7796 1043.53 53.062 1048.55 46.3629C1052.15 41.5756 1055.87 36.8897 1059.5 32.1272C1063.56 26.7941 1067.6 21.4453 1071.6 16.0655C1074.17 12.6072 1076.72 9.13023 1079.14 5.56826C1080.95 2.9018 1079.8 0.590079 1076.6 0.266288C1075.28 0.133449 1073.95 0.156306 1072.63 0.156922C1038.55 0.172614 1004.48 0.20844 970.404 0.212836Z" fill="#FF2626"/>
@@ -116,15 +102,12 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- 01. BRAND THESIS (Fluid Editorial Storytelling — Zero Boxy Borders)       -->
   <!-- ========================================================================= -->
   <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="philosophy-section">
-    <!-- Ambient Backdrop Light -->
-    <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-hst-red/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
-
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Top Section Identifier -->
       <div class="max-w-3xl mb-16">
-        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-white/[0.05] text-neutral-300 w-fit mb-6">
-          <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
           <span>// 01 Corporate Thesis</span>
         </div>
         <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
@@ -175,9 +158,6 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- 02. VENTURES ECOSYSTEM (Linear-Style Fluid Bento Showcase)                -->
   <!-- ========================================================================= -->
   <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="ventures-section">
-    <!-- Ambient Spotlight -->
-    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(255,38,38,0.1),transparent_70%)] pointer-events-none"></div>
-
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
@@ -197,12 +177,12 @@ const otherVentures = ventures.filter(v => !v.featured);
         </a>
       </div>
 
-      <!-- Floating Capsule Filter Bar (No harsh borders) -->
-      <div class="inline-flex p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md mb-12 flex-wrap gap-1" id="venture-filter-bar">
+      <!-- Floating Capsule Filter Bar (Solid Fill Bar) -->
+      <div class="inline-flex p-1.5 rounded-full bg-[#121212] mb-12 flex-wrap gap-1" id="venture-filter-bar">
         <button 
           type="button" 
           data-filter="all" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all shadow-lg shadow-hst-red/30 active"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all active"
         >
           All (9)
         </button>
@@ -236,7 +216,7 @@ const otherVentures = ventures.filter(v => !v.featured);
         </button>
       </div>
 
-      <!-- Fluid Ventures Grid (Borderless cards with soft hover illumination) -->
+      <!-- Fluid Ventures Grid (Solid fill cards) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ventures-grid">
         {featuredVentures.map((v) => (
           <div data-venture-category={v.category.toLowerCase()}>
@@ -250,16 +230,15 @@ const otherVentures = ventures.filter(v => !v.featured);
         ))}
       </div>
 
-      <!-- Fluid Action Card (No harsh box border) -->
-      <div class="mt-20 p-10 sm:p-14 rounded-3xl bg-gradient-to-r from-white/[0.04] via-white/[0.02] to-transparent backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
-        <div class="absolute top-0 left-0 w-64 h-64 bg-hst-red/[0.08] rounded-full blur-3xl pointer-events-none"></div>
+      <!-- Fluid Action Card (Solid #121212 Fill) -->
+      <div class="mt-20 p-10 sm:p-14 rounded-3xl bg-[#121212] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
         <div class="space-y-2 relative z-10 max-w-xl">
           <h4 class="text-2xl font-bold text-white tracking-tight">Have an initiative aligned with our venture ecosystem?</h4>
           <p class="text-sm text-neutral-400">We actively evaluate technical partnerships, co-build initiatives, and foundational architectures.</p>
         </div>
         <a
           href={getPath('/contact')}
-          class="relative z-10 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all whitespace-nowrap shadow-xl shadow-hst-red/30 hover:scale-105 active:scale-95"
+          class="relative z-10 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all whitespace-nowrap hover:scale-105 active:scale-95"
         >
           Initiate Venture Dialog
         </a>
@@ -289,7 +268,7 @@ const otherVentures = ventures.filter(v => !v.featured);
             <div>
               <div class="flex items-center justify-between mb-6">
                 <span class="text-2xl font-mono font-extrabold text-hst-red">{cap.number}</span>
-                <span class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-hst-red transition-colors shadow-[0_0_8px_rgba(255,38,38,0.6)]"></span>
+                <span class="w-2 h-2 rounded-full bg-neutral-600 group-hover:bg-hst-red transition-colors"></span>
               </div>
               <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-3 group-hover:text-white transition-colors">
                 {cap.title}
@@ -301,7 +280,7 @@ const otherVentures = ventures.filter(v => !v.featured);
             
             <div class="pt-4 flex flex-wrap gap-2">
               {cap.subDisciplines.map((sub) => (
-                <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-white/[0.04] text-neutral-300 group-hover:bg-white/[0.08] transition-colors">
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-[#1C1C1C] text-neutral-300 group-hover:bg-[#252525] group-hover:text-white transition-colors">
                   {sub}
                 </span>
               ))}
@@ -314,7 +293,7 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 04. OPERATING METHODOLOGY (Continuous Connected Laser Pipeline)          -->
+  <!-- 04. OPERATING METHODOLOGY (Continuous Connected Pipeline)                 -->
   <!-- ========================================================================= -->
   <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="approach-section">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -327,8 +306,8 @@ const otherVentures = ventures.filter(v => !v.featured);
         className="mb-16"
       />
 
-      <!-- Continuous Laser Track connecting all 4 phases -->
-      <div class="laser-track mb-12 hidden lg:block"></div>
+      <!-- Solid Minimal Divider Line -->
+      <div class="h-[1px] bg-[#1A1A1A] w-full mb-12 hidden lg:block"></div>
 
       <!-- 4 Stages Timeline -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -364,18 +343,15 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 05. FOUNDER & LEADERSHIP (Grand Open-Canvas Cinematic Presentation)      -->
+  <!-- 05. FOUNDER & LEADERSHIP (Grand Open-Canvas Presentation)                 -->
   <!-- ========================================================================= -->
   <section class="py-28 lg:py-40 bg-[#000000] text-white relative overflow-hidden" id="founder-section">
-    <!-- Ambient Radial Spotlight behind portrait -->
-    <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-hst-red/[0.12] rounded-full blur-[160px] pointer-events-none"></div>
-
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Left: Open-Canvas Founder Portrait (Zero harsh box border) -->
+        <!-- Left: Open-Canvas Founder Portrait (Zero harsh box border, pure black) -->
         <div class="lg:col-span-5 relative flex justify-center">
-          <div class="relative rounded-3xl overflow-hidden shadow-2xl group max-w-md w-full">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl group max-w-md w-full bg-[#121212]">
             <img 
               src={getPath(founderData.photoPath)} 
               alt={`${founderData.name} — Founder, HackerSpace Technologies`}
@@ -385,8 +361,8 @@ const otherVentures = ventures.filter(v => !v.featured);
               height="800"
             />
             
-            <!-- Bottom Seamless Gradient Vignette -->
-            <div class="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent text-white">
+            <!-- Bottom Solid Information Card -->
+            <div class="p-6 bg-[#0E0E0E] text-white">
               <span class="text-[11px] font-mono tracking-widest uppercase text-hst-red font-semibold block">
                 Lead Architect &amp; Founder
               </span>
@@ -402,8 +378,8 @@ const otherVentures = ventures.filter(v => !v.featured);
 
         <!-- Right: Narrative & Philosophy -->
         <div class="lg:col-span-7 space-y-8">
-          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-white/[0.05] text-neutral-300 w-fit">
-            <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit">
+            <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
             <span>// 05 Founder &amp; Leadership</span>
           </div>
 
@@ -411,7 +387,7 @@ const otherVentures = ventures.filter(v => !v.featured);
             {founderData.name}
           </h2>
 
-          <blockquote class="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md text-xl sm:text-2xl font-medium text-neutral-200 leading-snug relative overflow-hidden">
+          <blockquote class="p-8 rounded-2xl bg-[#121212] text-xl sm:text-2xl font-medium text-neutral-200 leading-snug relative overflow-hidden">
             <div class="absolute left-0 top-0 bottom-0 w-1 bg-hst-red rounded-full"></div>
             “{founderData.tagline}”
           </blockquote>
@@ -428,7 +404,7 @@ const otherVentures = ventures.filter(v => !v.featured);
           <div class="pt-4 flex flex-wrap items-center gap-6">
             <a
               href={getPath('/founder')}
-              class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all shadow-xl shadow-hst-red/30 hover:scale-105 active:scale-95"
+              class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all hover:scale-105 active:scale-95"
             >
               <span>Read Full Founder Biography</span>
               <span>→</span>
@@ -452,11 +428,6 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- 06. HIGH-CONVERSION CONTACT (Seamless Borderless Enclosure)                -->
   <!-- ========================================================================= -->
   <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="contact-section">
-    <!-- Ambient Red Gradient Glow (Enclosed) -->
-    <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-hst-red/10 rounded-full blur-[160px]"></div>
-    </div>
-
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
@@ -493,7 +464,7 @@ const otherVentures = ventures.filter(v => !v.featured);
             </div>
           </div>
 
-          <div class="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md">
+          <div class="p-6 rounded-2xl bg-[#121212]">
             <span class="text-xs font-mono uppercase tracking-wider text-neutral-400 block mb-1">Direct Postal / Mail Dispatch</span>
             <a href="mailto:contact@hackerspace.technologies" class="text-base font-mono font-bold text-white hover:text-hst-red transition-colors">
               contact@hackerspace.technologies
