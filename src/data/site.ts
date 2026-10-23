@@ -36,6 +36,7 @@ export const siteConfig: SiteConfig = {
     { label: "Ventures", href: "/ventures" },
     { label: "Innovation", href: "/innovation" },
     { label: "Founder", href: "/founder" },
+    { label: "Careers", href: "/careers" },
     { label: "Contact", href: "/contact" },
   ],
   cta: {
@@ -49,6 +50,7 @@ export const siteConfig: SiteConfig = {
       { value: "partnership", label: "Strategic Partnership" },
       { value: "venture", label: "Venture Collaboration" },
       { value: "product", label: "Product & Technology Inquiry" },
+      { value: "careers", label: "Careers & Talent Application" },
       { value: "media", label: "Media & Speaking" },
       { value: "general", label: "General Inquiry" },
     ]

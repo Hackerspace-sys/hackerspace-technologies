@@ -1,18 +1,17 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHeader from '../components/SectionHeader.astro';
-import VentureCard from '../components/VentureCard.astro';
 import ContactForm from '../components/ContactForm.astro';
 import Logo from '../components/Logo.astro';
 import { ventures } from '../data/ventures';
 import { capabilities, approachSteps } from '../data/capabilities';
 import { founderData } from '../data/founder';
+import { jobPositions, operatingPrinciples } from '../data/careers';
 import { siteConfig } from '../data/site';
 import { getPath } from '../utils/paths';
 
-// Top ventures
+// Top ventures for initial display
 const featuredVentures = ventures.filter(v => v.featured);
-const otherVentures = ventures.filter(v => !v.featured);
 ---
 
 <BaseLayout 
@@ -23,7 +22,11 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- ========================================================================= -->
   <!-- HERO SECTION (Pure Black Canvas with Solid Fill Typography & Monogram)    -->
   <!-- ========================================================================= -->
-  <section class="relative min-h-[96vh] flex flex-col justify-center items-center bg-[#000000] text-white overflow-hidden pt-28 pb-20">
+  <section 
+    class="relative min-h-[96vh] flex flex-col justify-center items-center text-white overflow-hidden pt-28 pb-20 transition-colors duration-700 bg-transparent"
+    id="hero-section"
+    data-bg-color="#000000"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
       
       <!-- Live Telemetry Status Pill (Solid Fill Pill) -->
@@ -50,7 +53,7 @@ const otherVentures = ventures.filter(v => !v.featured);
       <!-- Sleek Dual Action Buttons (Solid Fills) -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in">
         <a
-          href={getPath('/ventures')}
+          href="#ventures-section"
           class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-full hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-hst-red"
         >
           <span>Explore Our Ventures</span>
@@ -58,22 +61,22 @@ const otherVentures = ventures.filter(v => !v.featured);
         </a>
 
         <a
-          href={getPath('/founder')}
-          class="inline-flex items-center justify-center px-8 py-4 text-xs font-semibold tracking-widest uppercase text-white bg-[#161616] hover:bg-[#222222] transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-white"
+          href={getPath('/careers')}
+          class="inline-flex items-center justify-center px-8 py-4 text-xs font-semibold tracking-widest uppercase text-white bg-[#141414] hover:bg-[#202020] transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-white"
         >
-          Meet the Founder
+          Careers at HST
         </a>
       </div>
 
-      <!-- Linear-Style Floating Monogram Sculpture (Zero boxy borders, sharp on pure black) -->
-      <div class="relative max-w-3xl mx-auto pt-6">
-        <div class="relative py-8 flex flex-col items-center justify-center">
-          <!-- Monogram (Solid crisp vector on pure black, zero drop-shadow glow) -->
+      <!-- Monogram Sculpture (Solid crisp vector on pure black) -->
+      <div class="relative max-w-3xl mx-auto pt-4">
+        <div class="relative py-6 flex flex-col items-center justify-center">
           <svg 
             viewBox="0 0 1080 360" 
             fill="none" 
             xmlns="http://www.w3.org/2000/svg"
             class="w-full max-w-md animate-float"
+            aria-label="HackerSpace Technologies Official Monogram"
           >
             <!-- Red T Accent -->
             <path d="M970.404 0.212836C895.395 0.22255 803.175 0.297197 728.166 0.209282L682.142 70.6929C722.477 70.6981 762.812 70.6525 803.146 70.6392C804.276 70.6388 805.405 70.7454 807.035 70.8272C765.512 165.566 726.812 261.856 686.592 356.908C686.079 358.121 686.866 359.427 688.182 359.361C688.762 359.332 689.293 359.299 689.728 359.313C694.058 359.456 698.314 359.253 702.646 359.266C716.009 359.306 729.372 359.209 742.734 359.313C749.472 359.365 756.21 359.698 762.944 359.988C765.042 360.077 766.82 359.718 767.674 357.605C769.914 352.066 772.11 346.511 774.306 340.955L774.868 339.534C777.471 332.95 779.997 326.334 782.665 319.777C786.275 310.902 790.042 302.09 793.644 293.212C796.979 284.996 800.16 276.719 803.456 268.488C805.923 262.328 808.491 256.209 810.968 250.053C813.618 243.465 816.154 236.831 818.85 230.261C821.948 222.711 825.206 215.226 828.322 207.683C830.985 201.238 833.518 194.74 836.158 188.286C839.34 180.509 842.601 172.763 845.777 164.984C848.862 157.428 851.858 149.836 854.94 142.278C858.109 134.51 861.372 126.78 864.525 119.005C867.598 111.428 870.505 103.783 873.629 96.2265C876.747 88.6881 880.074 81.2363 883.247 73.7205L883.28 73.6429C884.515 70.7182 884.561 70.6082 887.602 70.6081C933.717 70.607 979.831 70.5613 1025.94 70.7017C1029.59 70.7128 1031.69 69.2885 1033.63 66.5806C1038.52 59.7796 1043.53 53.062 1048.55 46.3629C1052.15 41.5756 1055.87 36.8897 1059.5 32.1272C1063.56 26.7941 1067.6 21.4453 1071.6 16.0655C1074.17 12.6072 1076.72 9.13023 1079.14 5.56826C1080.95 2.9018 1079.8 0.590079 1076.6 0.266288C1075.28 0.133449 1073.95 0.156306 1072.63 0.156922C1038.55 0.172614 1004.48 0.20844 970.404 0.212836Z" fill="#FF2626"/>
@@ -101,7 +104,11 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- ========================================================================= -->
   <!-- 01. BRAND THESIS (Fluid Editorial Storytelling — Zero Boxy Borders)       -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="philosophy-section">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="philosophy-section"
+    data-bg-color="#000000"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Top Section Identifier -->
@@ -155,83 +162,183 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 02. VENTURES ECOSYSTEM (Linear-Style Fluid Bento Showcase)                -->
+  <!-- 02. VENTURES ECOSYSTEM (Phantom-Style Horizontal Side-Scroll Track)        -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="ventures-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="ventures-section"
+    data-bg-color="#0A0A0C"
+  >
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mb-8">
       
-      <!-- Section Header -->
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+      <!-- Top Section Header & Horizontal Nav Buttons -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
         <SectionHeader 
           eyebrow="// 02 Product Portfolio"
           title="The HST Venture Ecosystem"
-          description="A diversified portfolio of software products, mobility businesses, and engineering initiatives conceived and stewarded by HackerSpace Technologies."
+          description="A diversified portfolio of software products, mobility platforms, and engineering initiatives conceived and stewarded by HackerSpace Technologies."
           theme="dark"
         />
-        <a 
-          href={getPath('/ventures')} 
-          class="inline-flex items-center gap-2 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:text-white transition-colors"
-        >
-          <span>Explore All 9 Ventures</span>
-          <span>→</span>
-        </a>
+        
+        <!-- Phantom-Style Navigation Controls & Slide Indicator -->
+        <div class="flex items-center gap-4 self-start md:self-end">
+          <div class="flex items-center gap-2">
+            <button 
+              type="button" 
+              id="ventures-scroll-left" 
+              aria-label="Scroll left through ventures"
+              class="w-12 h-12 rounded-full bg-[#141414] hover:bg-[#202020] text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 text-lg"
+            >
+              ←
+            </button>
+            <button 
+              type="button" 
+              id="ventures-scroll-right" 
+              aria-label="Scroll right through ventures"
+              class="w-12 h-12 rounded-full bg-[#141414] hover:bg-[#202020] text-white flex items-center justify-center transition-all hover:scale-105 active:scale-95 text-lg"
+            >
+              →
+            </button>
+          </div>
+          <span id="ventures-track-counter" class="text-xs font-mono font-semibold text-neutral-400 px-3.5 py-2.5 rounded-full bg-[#121212]">
+            01 / 09
+          </span>
+          <a 
+            href={getPath('/ventures')} 
+            class="hidden sm:inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-hst-red hover:text-white transition-colors ml-2"
+          >
+            <span>All Ventures</span>
+            <span>→</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Floating Capsule Filter Bar (Solid Fill Bar) -->
-      <div class="inline-flex p-1.5 rounded-full bg-[#121212] mb-12 flex-wrap gap-1" id="venture-filter-bar">
+      <!-- Minimalist Category Filter Pills (Solid Fills) -->
+      <div class="flex items-center gap-2 overflow-x-auto scrollbar-none pb-2" id="venture-filter-bar">
         <button 
           type="button" 
           data-filter="all" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all active"
+          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all whitespace-nowrap active"
         >
           All (9)
         </button>
         <button 
           type="button" 
           data-filter="software" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#141414] text-neutral-400 hover:text-white transition-all whitespace-nowrap"
         >
           Software &amp; Web
         </button>
         <button 
           type="button" 
           data-filter="mobility" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#141414] text-neutral-400 hover:text-white transition-all whitespace-nowrap"
         >
           Clean Mobility &amp; EV
         </button>
         <button 
           type="button" 
           data-filter="ai" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#141414] text-neutral-400 hover:text-white transition-all whitespace-nowrap"
         >
           Applied AI &amp; Utility
         </button>
         <button 
           type="button" 
           data-filter="media" 
-          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#141414] text-neutral-400 hover:text-white transition-all whitespace-nowrap"
         >
           Digital Media
         </button>
       </div>
+    </div>
 
-      <!-- Fluid Ventures Grid (Solid fill cards) -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ventures-grid">
-        {featuredVentures.map((v) => (
-          <div data-venture-category={v.category.toLowerCase()}>
-            <VentureCard venture={v} theme="dark" />
-          </div>
-        ))}
-        {otherVentures.map((v) => (
-          <div data-venture-category={v.category.toLowerCase()}>
-            <VentureCard venture={v} theme="dark" />
+    <!-- Phantom-Style Horizontal Side-Scroll Track -->
+    <div class="w-full relative">
+      <div 
+        id="ventures-horizontal-track" 
+        class="flex gap-6 sm:gap-8 overflow-x-auto scroll-smooth snap-x snap-mandatory scrollbar-none px-4 sm:px-6 lg:px-8 max-w-site mx-auto pb-6 cursor-grab active:cursor-grabbing select-none"
+      >
+        {ventures.map((venture, idx) => (
+          <div 
+            class="venture-card-wrapper snap-start shrink-0 w-[310px] sm:w-[410px] lg:w-[460px] flex flex-col transition-all duration-300"
+            data-index={idx + 1}
+            data-category={venture.category.toLowerCase()}
+          >
+            <div class="h-full flex flex-col justify-between p-7 sm:p-9 rounded-3xl bg-[#121212] hover:bg-[#181818] transition-all duration-300 hover:-translate-y-1 relative group overflow-hidden">
+              
+              <!-- Top Category + Status Badge (Solid Fill) -->
+              <div>
+                <div class="flex items-center justify-between gap-3 mb-6">
+                  <span class="text-xs font-mono font-medium tracking-wider uppercase text-neutral-400 group-hover:text-neutral-300 transition-colors">
+                    {venture.category}
+                  </span>
+                  <span class={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-[11px] font-mono ${
+                    venture.statusType === 'live' 
+                      ? 'bg-[#FF2626] text-white font-semibold' 
+                      : 'bg-[#222222] text-white'
+                  }`}>
+                    <span class={`w-1.5 h-1.5 rounded-full ${
+                      venture.statusType === 'live' ? 'bg-white' : 'bg-[#FF2626]'
+                    }`}></span>
+                    <span>{venture.status}</span>
+                  </span>
+                </div>
+
+                <!-- Number Indicator & Name -->
+                <div class="flex items-start justify-between gap-4 mb-3">
+                  <h3 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white group-hover:text-white transition-colors">
+                    <a href={getPath(`/ventures/${venture.slug}`)} class="focus:outline-none focus-visible:ring-1 focus-visible:ring-hst-red rounded">
+                      {venture.name}
+                    </a>
+                  </h3>
+                  <span class="text-xs font-mono font-bold text-neutral-600 group-hover:text-hst-red transition-colors pt-1">
+                    0{idx + 1}
+                  </span>
+                </div>
+
+                <p class="text-xs sm:text-sm font-mono text-hst-red mb-4">
+                  {venture.tagline}
+                </p>
+
+                <p class="text-sm sm:text-base leading-relaxed text-neutral-400 font-normal mb-8">
+                  {venture.oneLiner}
+                </p>
+              </div>
+
+              <!-- Bottom Disciplines & Exploration Link -->
+              <div class="pt-6 mt-auto">
+                <div class="flex flex-wrap gap-2 mb-6">
+                  {venture.techDisciplines.slice(0, 3).map((disc) => (
+                    <span class="text-[11px] font-mono px-3 py-1 rounded-full bg-[#1C1C1C] text-neutral-300 group-hover:bg-[#252525] group-hover:text-white transition-colors">
+                      {disc}
+                    </span>
+                  ))}
+                </div>
+
+                <div class="flex items-center justify-between pt-4 border-t border-[#1C1C1C]">
+                  <span class="text-xs font-mono text-neutral-500">
+                    {venture.stage}
+                  </span>
+                  <a 
+                    href={getPath(`/ventures/${venture.slug}`)}
+                    class="inline-flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-white hover:text-hst-red transition-colors group/link"
+                  >
+                    <span>Architecture</span>
+                    <span class="transition-transform group-hover/link:translate-x-1">→</span>
+                  </a>
+                </div>
+              </div>
+
+            </div>
           </div>
         ))}
       </div>
+    </div>
 
-      <!-- Fluid Action Card (Solid #121212 Fill) -->
-      <div class="mt-20 p-10 sm:p-14 rounded-3xl bg-[#121212] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+    <!-- Ecosystem Strategic Action Card (Solid #121212 Fill) -->
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10 mt-16">
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#121212] flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
         <div class="space-y-2 relative z-10 max-w-xl">
           <h4 class="text-2xl font-bold text-white tracking-tight">Have an initiative aligned with our venture ecosystem?</h4>
           <p class="text-sm text-neutral-400">We actively evaluate technical partnerships, co-build initiatives, and foundational architectures.</p>
@@ -243,14 +350,17 @@ const otherVentures = ventures.filter(v => !v.featured);
           Initiate Venture Dialog
         </a>
       </div>
-
     </div>
   </section>
 
   <!-- ========================================================================= -->
   <!-- 03. TECHNICAL CAPABILITIES (Fluid Open Columns — No Boxes)               -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="capabilities-section">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="capabilities-section"
+    data-bg-color="#000000"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <SectionHeader 
@@ -295,7 +405,11 @@ const otherVentures = ventures.filter(v => !v.featured);
   <!-- ========================================================================= -->
   <!-- 04. OPERATING METHODOLOGY (Continuous Connected Pipeline)                 -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="approach-section">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="approach-section"
+    data-bg-color="#0B0B0D"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <SectionHeader 
@@ -343,9 +457,101 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 05. FOUNDER & LEADERSHIP (Grand Open-Canvas Presentation)                 -->
+  <!-- 05. CAREERS & TALENT (Phantom-Inspired High-Conviction Engineering)        -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-40 bg-[#000000] text-white relative overflow-hidden" id="founder-section">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="careers-section"
+    data-bg-color="#0E0E10"
+  >
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Section Header with Direct Link -->
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+        <SectionHeader 
+          eyebrow="// 05 Talent & Engineering"
+          title="Build Generational Technology."
+          description="We are assembling an elite, low-ego cohort of systems architects, embedded engineers, and design thinkers to build sovereign software and clean transit systems."
+          theme="dark"
+        />
+        <a 
+          href={getPath('/careers')} 
+          class="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#181818] hover:bg-hst-red text-white text-xs font-mono font-semibold uppercase tracking-wider transition-all duration-300 self-start md:self-end"
+        >
+          <span>View All 5 Positions</span>
+          <span>→</span>
+        </a>
+      </div>
+
+      <!-- 3 Featured Positions (Solid Fills, Borderless) -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-16">
+        {jobPositions.slice(0, 3).map((job) => (
+          <div class="card-fluid p-8 rounded-3xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all duration-300">
+            <div>
+              <div class="flex items-center justify-between gap-2 mb-6">
+                <span class="text-xs font-mono uppercase tracking-wider text-hst-red font-semibold">
+                  {job.department}
+                </span>
+                <span class="text-xs font-mono text-neutral-400">
+                  {job.type}
+                </span>
+              </div>
+
+              <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-3 group-hover:text-hst-red transition-colors">
+                <a href={getPath('/careers')} class="focus:outline-none">
+                  {job.title}
+                </a>
+              </h3>
+
+              <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed mb-6 font-normal">
+                {job.oneLiner}
+              </p>
+            </div>
+
+            <div class="pt-6 border-t border-[#1C1C1C] flex items-center justify-between">
+              <span class="text-xs font-mono text-neutral-500">
+                {job.location}
+              </span>
+              <a 
+                href={getPath('/careers')}
+                class="text-xs font-mono font-bold uppercase tracking-wider text-white group-hover:text-hst-red transition-colors flex items-center gap-1"
+              >
+                <span>Blueprint</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Operating Philosophy Strip (Phantom-Style 4 Pillars) -->
+      <div class="p-8 sm:p-12 rounded-3xl bg-[#121212] grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {operatingPrinciples.map((principle) => (
+          <div class="space-y-2">
+            <span class="text-2xl font-mono font-extrabold text-hst-red block mb-1">
+              {principle.number}
+            </span>
+            <h4 class="text-sm font-bold text-white tracking-tight">
+              {principle.title}
+            </h4>
+            <p class="text-xs text-neutral-400 leading-relaxed">
+              {principle.statement}
+            </p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 06. FOUNDER & LEADERSHIP (Lakshmi Krishna Attipatla Open Canvas)          -->
+  <!-- ========================================================================= -->
+  <section 
+    class="py-28 lg:py-40 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="founder-section"
+    data-bg-color="#000000"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
@@ -380,7 +586,7 @@ const otherVentures = ventures.filter(v => !v.featured);
         <div class="lg:col-span-7 space-y-8">
           <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit">
             <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
-            <span>// 05 Founder &amp; Leadership</span>
+            <span>// 06 Founder &amp; Leadership</span>
           </div>
 
           <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
@@ -425,16 +631,20 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 06. HIGH-CONVERSION CONTACT (Seamless Borderless Enclosure)                -->
+  <!-- 07. HIGH-CONVERSION CONTACT (Seamless Borderless Enclosure)                -->
   <!-- ========================================================================= -->
-  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="contact-section">
+  <section 
+    class="py-28 lg:py-36 text-white relative overflow-hidden transition-colors duration-700 bg-transparent" 
+    id="contact-section"
+    data-bg-color="#050505"
+  >
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         <!-- Left: Inquiry Description (col-span-5) -->
         <div class="lg:col-span-5 space-y-8">
           <SectionHeader 
-            eyebrow="// 06 Dialogue"
+            eyebrow="// 07 Strategic Dialogue"
             title="Have an Idea Worth Building?"
             description="We welcome high-conviction discussions with potential partners, technical collaborators, and organizations seeking intelligent solutions."
             theme="dark"
@@ -481,48 +691,143 @@ const otherVentures = ventures.filter(v => !v.featured);
     </div>
   </section>
 
-  <!-- Client-side Interactive Filter Script -->
+  <!-- Client-side Interactive Scripts: Phantom Horizontal Track + Scroll Color Animation -->
   <script is:inline>
-    function setupVentureFilter() {
-      const filterButtons = document.querySelectorAll('.venture-filter-btn');
-      const cards = document.querySelectorAll('#ventures-grid > div');
-      
-      if (!filterButtons.length || !cards.length) return;
+    // 1. Scroll-triggered solid background color transition (Phantom-style)
+    function setupScrollColorTransition() {
+      const sections = document.querySelectorAll('section[data-bg-color]');
+      if (!sections.length) return;
 
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const targetColor = entry.target.getAttribute('data-bg-color');
+            if (targetColor) {
+              document.body.style.backgroundColor = targetColor;
+            }
+          }
+        });
+      }, {
+        root: null,
+        threshold: 0.25,
+        rootMargin: '-10% 0px -10% 0px'
+      });
+
+      sections.forEach((sec) => observer.observe(sec));
+    }
+
+    // 2. Phantom-Style Horizontal Side-Scroll Track for Ventures
+    function setupHorizontalVenturesTrack() {
+      const track = document.getElementById('ventures-horizontal-track');
+      const leftBtn = document.getElementById('ventures-scroll-left');
+      const rightBtn = document.getElementById('ventures-scroll-right');
+      const counterEl = document.getElementById('ventures-track-counter');
+      const filterButtons = document.querySelectorAll('.venture-filter-btn');
+      const cardWrappers = document.querySelectorAll('.venture-card-wrapper');
+
+      if (!track) return;
+
+      // Card width for step navigation
+      const getScrollStep = () => {
+        const firstCard = track.querySelector('.venture-card-wrapper');
+        return firstCard ? firstCard.offsetWidth + 24 : 420;
+      };
+
+      // Button controls
+      if (leftBtn) {
+        leftBtn.addEventListener('click', () => {
+          track.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
+        });
+      }
+      if (rightBtn) {
+        rightBtn.addEventListener('click', () => {
+          track.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
+        });
+      }
+
+      // Drag to scroll on desktop
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+
+      track.addEventListener('mousedown', (e) => {
+        isDown = true;
+        startX = e.pageX - track.offsetLeft;
+        scrollLeft = track.scrollLeft;
+      });
+
+      window.addEventListener('mouseup', () => {
+        isDown = false;
+      });
+
+      track.addEventListener('mousemove', (e) => {
+        if (!isDown) return;
+        e.preventDefault();
+        const x = e.pageX - track.offsetLeft;
+        const walk = (x - startX) * 1.6;
+        track.scrollLeft = scrollLeft - walk;
+      });
+
+      // Update slide counter on scroll
+      track.addEventListener('scroll', () => {
+        const step = getScrollStep();
+        const currentIdx = Math.min(Math.max(Math.round(track.scrollLeft / step) + 1, 1), 9);
+        if (counterEl) {
+          counterEl.textContent = `0${currentIdx} / 09`;
+        }
+      }, { passive: true });
+
+      // Filter handling in horizontal track
       filterButtons.forEach(btn => {
         btn.addEventListener('click', () => {
           const filter = btn.getAttribute('data-filter');
 
-          // Toggle button styles
+          // Update active button state
           filterButtons.forEach(b => {
-            b.classList.remove('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
-            b.classList.add('text-neutral-400');
+            b.classList.remove('bg-hst-red', 'text-white');
+            b.classList.add('bg-[#141414]', 'text-neutral-400');
           });
-          btn.classList.add('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
-          btn.classList.remove('text-neutral-400');
+          btn.classList.add('bg-hst-red', 'text-white');
+          btn.classList.remove('bg-[#141414]', 'text-neutral-400');
 
-          // Filter card visibility
-          cards.forEach(card => {
-            const cat = card.getAttribute('data-venture-category') || '';
-            if (filter === 'all') {
-              card.style.display = 'block';
-            } else if (filter === 'software' && (cat.includes('survey') || cat.includes('software') || cat.includes('web'))) {
-              card.style.display = 'block';
-            } else if (filter === 'mobility' && (cat.includes('mobility') || cat.includes('advertising') || cat.includes('battery') || cat.includes('energy'))) {
-              card.style.display = 'block';
-            } else if (filter === 'ai' && (cat.includes('legal') || cat.includes('well-being') || cat.includes('health') || cat.includes('ai'))) {
-              card.style.display = 'block';
-            } else if (filter === 'media' && (cat.includes('audio') || cat.includes('gaming') || cat.includes('media'))) {
-              card.style.display = 'block';
+          // Filter card display & reset scroll position
+          let matchCount = 0;
+          cardWrappers.forEach(card => {
+            const cat = card.getAttribute('data-category') || '';
+            let matches = false;
+            if (filter === 'all') matches = true;
+            else if (filter === 'software' && (cat.includes('software') || cat.includes('survey') || cat.includes('web'))) matches = true;
+            else if (filter === 'mobility' && (cat.includes('mobility') || cat.includes('transit') || cat.includes('battery') || cat.includes('energy') || cat.includes('advertising'))) matches = true;
+            else if (filter === 'ai' && (cat.includes('ai') || cat.includes('legal') || cat.includes('health') || cat.includes('well-being'))) matches = true;
+            else if (filter === 'media' && (cat.includes('media') || cat.includes('gaming') || cat.includes('audio'))) matches = true;
+
+            if (matches) {
+              card.style.display = 'flex';
+              matchCount++;
             } else {
               card.style.display = 'none';
             }
           });
+
+          track.scrollTo({ left: 0, behavior: 'smooth' });
+          if (counterEl) {
+            counterEl.textContent = `01 / 0${matchCount}`;
+          }
         });
       });
     }
 
-    document.addEventListener('DOMContentLoaded', setupVentureFilter);
-    document.addEventListener('astro:page-load', setupVentureFilter);
+    // Initialize on both standard load and Astro view transitions
+    function initHomepageEnhancements() {
+      setupScrollColorTransition();
+      setupHorizontalVenturesTrack();
+    }
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', initHomepageEnhancements);
+    } else {
+      initHomepageEnhancements();
+    }
+    document.addEventListener('astro:page-load', initHomepageEnhancements);
   </script>
 </BaseLayout>

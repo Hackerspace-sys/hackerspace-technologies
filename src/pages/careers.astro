@@ -1,0 +1,345 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { jobPositions, operatingPrinciples, careerPerks } from '../data/careers';
+import { getPath } from '../utils/paths';
+---
+
+<BaseLayout
+  title="Careers — HackerSpace Technologies"
+  description="Join HackerSpace Technologies. Build independent products, scalable software platforms, and clean mobility infrastructure with extreme autonomy."
+  theme="dark"
+>
+  <!-- ========================================================================= -->
+  <!-- 01. HERO SECTION (Minimalist Phantom-Style Open Canvas)                   -->
+  <!-- ========================================================================= -->
+  <section class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden" data-theme-section="dark">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <div class="max-w-4xl space-y-6">
+        <!-- Telemetry Pill -->
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-[#121212] text-xs font-mono tracking-widest uppercase text-neutral-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
+          <span>// Talent &amp; Engineering Culture</span>
+        </div>
+
+        <!-- Grand Display Headline -->
+        <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-[-0.04em] leading-[1.02] text-white">
+          Careers at <br />
+          <span class="text-hst-red">HackerSpace Technologies.</span>
+        </h1>
+
+        <p class="text-xl sm:text-2xl text-neutral-400 font-normal leading-relaxed max-w-2xl">
+          Help us engineer products, platforms, and mobility infrastructure that move the future forward. No bureaucracy, extreme ownership, and real-world execution.
+        </p>
+
+        <!-- Quick Metric Tags -->
+        <div class="flex flex-wrap items-center gap-4 pt-4 text-xs font-mono text-neutral-400">
+          <span class="px-3 py-1.5 rounded-full bg-[#121212] text-white">100% Self-Directed Capital</span>
+          <span class="text-neutral-700">•</span>
+          <span class="px-3 py-1.5 rounded-full bg-[#121212] text-white">Global Remote-First</span>
+          <span class="text-neutral-700">•</span>
+          <span class="px-3 py-1.5 rounded-full bg-[#121212] text-white">Equity &amp; Profit Participation</span>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 02. OPERATING PRINCIPLES (Phantom-Style "Principles Guide Our People")    -->
+  <!-- ========================================================================= -->
+  <section class="py-24 bg-[#0A0A0C] text-white transition-colors duration-700" data-theme-section="charcoal">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
+          <span>// Culture &amp; Conviction</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+          Principles Guide <br />
+          <span class="text-neutral-500">Our People.</span>
+        </h2>
+        <p class="text-lg text-neutral-400 mt-4 leading-relaxed">
+          We operate unlike conventional corporate technology firms. We have zero tolerance for corporate politics, endless slide decks, or vanity metrics.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {operatingPrinciples.map((p) => (
+          <div class="p-8 sm:p-10 rounded-2xl bg-[#121212] hover:bg-[#181818] transition-all space-y-4">
+            <span class="text-2xl font-mono font-extrabold text-hst-red block">{p.number}</span>
+            <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white">{p.title}</h3>
+            <p class="text-sm text-neutral-400 leading-relaxed">{p.statement}</p>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 03. PERKS & BENEFITS (Phantom-Style "Powered by the Best Perks")          -->
+  <!-- ========================================================================= -->
+  <section class="py-24 bg-[#000000] text-white transition-colors duration-700" data-theme-section="dark">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
+          <span>// Total Rewards</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+          Powered by <br />
+          <span class="text-neutral-500">The Best Standards.</span>
+        </h2>
+        <p class="text-lg text-neutral-400 mt-4 leading-relaxed">
+          We provide our engineers and architects with the resources, autonomy, and upside required to do the definitive work of their careers.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {careerPerks.map((perk) => (
+          <div class="p-8 rounded-2xl bg-[#121212] hover:bg-[#181818] transition-all flex flex-col justify-between space-y-6">
+            <div>
+              <span class="inline-block px-2.5 py-1 rounded-full text-[11px] font-mono bg-[#1C1C1C] text-hst-red font-semibold mb-4">
+                {perk.tag}
+              </span>
+              <h3 class="text-xl font-bold tracking-tight text-white mb-2">
+                {perk.title}
+              </h3>
+              <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+                {perk.description}
+              </p>
+            </div>
+            <div class="h-1 w-8 bg-hst-red rounded-full"></div>
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================= -->
+  <!-- 04. OPEN POSITIONS DIRECTORY                                              -->
+  <!-- ========================================================================= -->
+  <section class="py-24 lg:py-32 bg-[#0C0C0E] text-white transition-colors duration-700" id="positions-section" data-theme-section="charcoal">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+        <div>
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-[#121212] text-neutral-300 w-fit mb-6">
+            <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
+            <span>// Open Positions</span>
+          </div>
+          <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+            Available Roles ({jobPositions.length})
+          </h2>
+        </div>
+
+        <p class="text-sm font-mono text-neutral-400 max-w-sm">
+          High-autonomy positions currently accepting candidates for foundational engineering and operations.
+        </p>
+      </div>
+
+      <!-- Department Filter Pills -->
+      <div class="inline-flex p-1.5 rounded-full bg-[#121212] mb-12 flex-wrap gap-1" id="dept-filters">
+        <button 
+          type="button" 
+          data-dept="all" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all active"
+        >
+          All Roles ({jobPositions.length})
+        </button>
+        <button 
+          type="button" 
+          data-dept="Engineering" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+        >
+          Engineering
+        </button>
+        <button 
+          type="button" 
+          data-dept="Mobility & Hardware" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+        >
+          Mobility &amp; Hardware
+        </button>
+        <button 
+          type="button" 
+          data-dept="Design & Product" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+        >
+          Design &amp; Product
+        </button>
+        <button 
+          type="button" 
+          data-dept="Applied AI" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+        >
+          Applied AI
+        </button>
+        <button 
+          type="button" 
+          data-dept="Operations" 
+          class="dept-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
+        >
+          Operations
+        </button>
+      </div>
+
+      <!-- Job Positions Stack -->
+      <div class="space-y-6" id="jobs-container">
+        {jobPositions.map((job) => (
+          <div 
+            class="job-card p-8 sm:p-10 rounded-2xl bg-[#121212] hover:bg-[#181818] transition-all space-y-6"
+            data-department={job.department}
+          >
+            <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+              <div class="flex flex-wrap items-center gap-3">
+                <span class="px-3 py-1 rounded-full text-[11px] font-mono bg-hst-red text-white font-semibold">
+                  {job.department}
+                </span>
+                <span class="text-neutral-600">•</span>
+                <span class="text-xs font-mono text-neutral-400">{job.location}</span>
+                <span class="text-neutral-600">•</span>
+                <span class="text-xs font-mono text-neutral-400">{job.type}</span>
+                <span class="text-neutral-600">•</span>
+                <span class="text-xs font-mono text-neutral-400">{job.experience}</span>
+              </div>
+
+              <div class="flex items-center gap-2">
+                {job.associatedVentures.map((v) => (
+                  <span class="text-[10px] font-mono uppercase tracking-wider px-2 py-0.5 rounded bg-[#1C1C1C] text-neutral-300">
+                    {v}
+                  </span>
+                ))}
+              </div>
+            </div>
+
+            <div>
+              <h3 class="text-2xl sm:text-3xl font-bold tracking-tight text-white mb-2">
+                {job.title}
+              </h3>
+              <p class="text-sm sm:text-base text-neutral-400 leading-relaxed max-w-4xl">
+                {job.oneLiner}
+              </p>
+            </div>
+
+            <!-- Expandable Details Accordion -->
+            <details class="group/details">
+              <summary class="cursor-pointer list-none inline-flex items-center gap-2 text-xs font-mono uppercase tracking-wider text-hst-red hover:underline focus:outline-none">
+                <span>View Full Role Blueprint &amp; Requirements</span>
+                <span class="transition-transform group-open/details:rotate-90">→</span>
+              </summary>
+              
+              <div class="mt-6 pt-6 border-t border-[#1F1F1F] grid grid-cols-1 md:grid-cols-2 gap-8 text-sm">
+                <div class="space-y-3">
+                  <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white">Core Mission &amp; Deliverables</h4>
+                  <ul class="space-y-2 text-xs text-neutral-400">
+                    {job.responsibilities.map((r) => (
+                      <li class="flex items-start gap-2">
+                        <span class="text-hst-red font-bold">▪</span>
+                        <span>{r}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+
+                <div class="space-y-3">
+                  <h4 class="text-xs font-mono font-bold uppercase tracking-wider text-white">Demonstrated Background</h4>
+                  <ul class="space-y-2 text-xs text-neutral-400">
+                    {job.requirements.map((req) => (
+                      <li class="flex items-start gap-2">
+                        <span class="text-hst-red font-bold">▪</span>
+                        <span>{req}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            </details>
+
+            <div class="pt-4 flex flex-wrap items-center justify-between gap-4 border-t border-[#1F1F1F]">
+              <span class="text-xs font-mono text-neutral-500">Ref ID: {job.id}</span>
+              <a 
+                href={`mailto:contact@hackerspace.technologies?subject=Application:%20${encodeURIComponent(job.title)}%20[${job.id}]&body=Hi%20HST%20Team,%0A%0AI%20am%20applying%20for%20the%20${encodeURIComponent(job.title)}%20position.%0A%0APortfolio/GitHub/Resume:%20%0AWhy%20I%20am%20a%20fit:%20%0A%0ABest,%0A`}
+                class="px-6 py-3 rounded-full text-xs font-bold font-mono uppercase tracking-wider bg-hst-red hover:bg-hst-red-hover text-white transition-all hover:scale-105 active:scale-95"
+              >
+                Apply for Position →
+              </a>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- Spontaneous Talent Box -->
+      <div class="mt-16 p-8 sm:p-12 rounded-3xl bg-[#121212] text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-2 max-w-xl">
+          <span class="text-xs font-mono uppercase text-hst-red font-semibold tracking-wider">Spontaneous Candidacy</span>
+          <h3 class="text-2xl font-bold tracking-tight">Do not see your exact discipline?</h3>
+          <p class="text-sm text-neutral-400 leading-relaxed">
+            We are always receptive to exceptional software architects, embedded firmware engineers, and operational leaders with non-standard capabilities.
+          </p>
+        </div>
+        <a 
+          href={getPath('/contact')}
+          class="px-8 py-4 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-[#1C1C1C] hover:bg-[#252525] text-white transition-all whitespace-nowrap"
+        >
+          Transmit General Profile →
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Dynamic Department Filter Script & Scroll-Triggered Theme Script -->
+  <script is:inline>
+    // Department filtering
+    const deptButtons = document.querySelectorAll('.dept-btn');
+    const jobCards = document.querySelectorAll('.job-card');
+
+    if (deptButtons.length && jobCards.length) {
+      deptButtons.forEach(btn => {
+        btn.addEventListener('click', () => {
+          const dept = btn.getAttribute('data-dept');
+          
+          deptButtons.forEach(b => {
+            b.classList.remove('bg-hst-red', 'text-white');
+            b.classList.add('text-neutral-400');
+          });
+          btn.classList.add('bg-hst-red', 'text-white');
+          btn.classList.remove('text-neutral-400');
+
+          jobCards.forEach(card => {
+            const cardDept = card.getAttribute('data-department');
+            if (dept === 'all' || cardDept === dept) {
+              card.style.display = 'block';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        });
+      });
+    }
+
+    // Scroll-triggered solid background transition
+    const sections = document.querySelectorAll('[data-theme-section]');
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const theme = entry.target.getAttribute('data-theme-section');
+          if (theme === 'charcoal') {
+            document.body.style.backgroundColor = '#0A0A0C';
+          } else {
+            document.body.style.backgroundColor = '#000000';
+          }
+        }
+      });
+    }, { threshold: 0.3 });
+
+    sections.forEach(s => observer.observe(s));
+  </script>
+</BaseLayout>
