@@ -12,12 +12,12 @@ const {
   eyebrow,
   title,
   description,
-  theme = 'light',
+  theme = 'dark',
   align = 'left',
   className = ''
 } = Astro.props;
 
-const isDark = theme === 'dark';
+const isDark = theme !== 'light';
 const alignClass = align === 'center' ? 'text-center mx-auto items-center' : 'text-left items-start';
 ---
 

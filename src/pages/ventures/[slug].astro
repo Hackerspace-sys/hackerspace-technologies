@@ -25,20 +25,20 @@ const relatedVentures = getAllVentures()
 // Status color mapping
 const statusBadges = {
   live: {
-    bg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/20',
-    dot: 'bg-emerald-500'
+    bg: 'bg-emerald-500/10 text-emerald-400 border-emerald-500/30',
+    dot: 'bg-emerald-400'
   },
   'in-development': {
-    bg: 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-    dot: 'bg-amber-500'
+    bg: 'bg-amber-500/10 text-amber-400 border-amber-500/30',
+    dot: 'bg-amber-400'
   },
   concept: {
-    bg: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
-    dot: 'bg-blue-500'
+    bg: 'bg-blue-500/10 text-blue-400 border-blue-500/30',
+    dot: 'bg-blue-400'
   },
   incubation: {
-    bg: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
-    dot: 'bg-purple-500'
+    bg: 'bg-purple-500/10 text-purple-400 border-purple-500/30',
+    dot: 'bg-purple-400'
   }
 };
 
@@ -51,7 +51,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
   theme="dark"
 >
   <!-- Dossier Header Section -->
-  <header class="py-20 lg:py-28 bg-[#050505] text-white border-b border-white/10 bg-grid-subtle-dark">
+  <header class="py-20 lg:py-28 bg-[#000000] text-white border-b border-white/10 bg-grid-subtle-dark">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       
       <!-- Back Link -->
@@ -87,8 +87,8 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
         </div>
 
         <!-- System Specifications Pill Box (lg:col-span-4) -->
-        <div class="lg:col-span-4 p-6 rounded-lg bg-[#111115] border border-white/10 space-y-4">
-          <span class="text-[11px] font-mono tracking-widest uppercase text-neutral-500 block border-b border-white/10 pb-2">
+        <div class="lg:col-span-4 p-6 rounded-xl bg-[#121212] border border-white/10 space-y-4 shadow-2xl">
+          <span class="text-[11px] font-mono tracking-widest uppercase text-neutral-400 block border-b border-white/10 pb-2">
             System Specifications
           </span>
           <div class="grid grid-cols-2 gap-4 text-xs font-mono">
@@ -116,7 +116,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
   </header>
 
   <!-- Deep Dive Technical Content -->
-  <section class="py-20 lg:py-28 bg-white text-neutral-900 border-b border-neutral-200">
+  <section class="py-20 lg:py-28 bg-[#000000] text-white border-b border-white/10">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
@@ -126,10 +126,10 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
           <!-- Section 1: Overview -->
           <div class="space-y-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">01 / Architectural Thesis</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-950">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
               Overview &amp; Purpose
             </h2>
-            <p class="text-base sm:text-lg leading-relaxed text-neutral-700">
+            <p class="text-base sm:text-lg leading-relaxed text-neutral-300">
               {venture.description}
             </p>
           </div>
@@ -137,18 +137,18 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
           <!-- Section 2: Problem & Solution Split -->
           <div class="grid grid-cols-1 md:grid-cols-2 gap-8 pt-4">
             <!-- Problem -->
-            <div class="p-8 rounded-lg bg-neutral-50 border border-neutral-200 space-y-4">
-              <span class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-500 flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-neutral-400"></span>
+            <div class="p-8 rounded-xl bg-[#121212] border border-white/10 space-y-4 shadow-xl">
+              <span class="text-xs font-mono font-bold uppercase tracking-wider text-neutral-400 flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-neutral-500"></span>
                 The Industry Problem
               </span>
-              <p class="text-sm text-neutral-700 leading-relaxed">
+              <p class="text-sm text-neutral-300 leading-relaxed">
                 {venture.problem}
               </p>
             </div>
 
             <!-- Solution -->
-            <div class="p-8 rounded-lg bg-neutral-900 text-white border border-neutral-800 space-y-4">
+            <div class="p-8 rounded-xl bg-[#161616] text-white border border-hst-red/30 space-y-4 shadow-xl shadow-hst-red/5">
               <span class="text-xs font-mono font-bold uppercase tracking-wider text-hst-red flex items-center gap-2">
                 <span class="w-2 h-2 rounded-full bg-hst-red"></span>
                 The HST Solution
@@ -162,14 +162,14 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
           <!-- Section 3: Key Features & Functional Modules -->
           <div class="space-y-6 pt-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">02 / Functional Capabilities</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-950">
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
               Engineering Modules &amp; Deliverables
             </h2>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {venture.keyFeatures.map((feat, idx) => (
-                <div class="p-5 rounded-lg border border-neutral-200 bg-white hover:border-hst-red/40 transition-colors flex items-start gap-3">
+                <div class="p-5 rounded-xl border border-white/10 bg-[#121212] hover:border-hst-red/40 hover:bg-[#161616] transition-all flex items-start gap-3">
                   <span class="text-xs font-mono font-bold text-hst-red mt-0.5">0{idx + 1}</span>
-                  <span class="text-sm text-neutral-800 font-medium leading-snug">{feat}</span>
+                  <span class="text-sm text-neutral-200 font-medium leading-snug">{feat}</span>
                 </div>
               ))}
             </div>
@@ -181,13 +181,13 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
         <aside class="lg:col-span-4 space-y-8 sticky top-28">
           
           <!-- Technology Disciplines Card -->
-          <div class="p-6 rounded-lg border border-neutral-200 bg-[#F9F9FB] space-y-4">
-            <h3 class="text-xs font-mono font-bold tracking-widest uppercase text-neutral-900">
+          <div class="p-6 rounded-xl border border-white/10 bg-[#121212] space-y-4 shadow-xl">
+            <h3 class="text-xs font-mono font-bold tracking-widest uppercase text-white">
               Engineering Disciplines
             </h3>
             <div class="flex flex-wrap gap-2">
               {venture.techDisciplines.map((disc) => (
-                <span class="text-xs font-mono px-3 py-1 rounded bg-white border border-neutral-200 text-neutral-800 shadow-2xs">
+                <span class="text-xs font-mono px-3 py-1 rounded bg-white/5 border border-white/5 text-neutral-300">
                   {disc}
                 </span>
               ))}
@@ -195,7 +195,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
           </div>
 
           <!-- Inquiry Action Box -->
-          <div class="p-6 rounded-lg bg-neutral-950 text-white space-y-4 border border-neutral-800">
+          <div class="p-6 rounded-xl bg-[#161616] text-white space-y-4 border border-white/10 shadow-2xl">
             <span class="text-xs font-mono uppercase text-hst-red tracking-widest block font-bold">
               Collaborate on {venture.name}
             </span>
@@ -204,7 +204,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
             </p>
             <a
               href={getPath('/contact')}
-              class="w-full inline-block text-center py-3 px-4 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm"
+              class="w-full inline-block text-center py-3.5 px-4 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm shadow-lg shadow-hst-red/25"
             >
               Initiate Dialogue →
             </a>
@@ -212,7 +212,7 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
 
           <!-- Back to Ventures -->
           <div class="text-center">
-            <a href={getPath('/ventures')} class="text-xs font-mono uppercase text-neutral-500 hover:text-neutral-900 transition-colors">
+            <a href={getPath('/ventures')} class="text-xs font-mono uppercase text-neutral-400 hover:text-white transition-colors">
               ← Return to all 9 ventures
             </a>
           </div>
@@ -224,10 +224,10 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
   </section>
 
   <!-- Related Ventures Section -->
-  <section class="py-20 bg-[#F8F8FA] border-b border-neutral-200">
+  <section class="py-20 bg-[#000000] text-white border-b border-white/10">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between mb-10 pb-4 border-b border-neutral-200">
-        <h2 class="text-xl font-bold tracking-tight text-neutral-900">
+      <div class="flex items-center justify-between mb-10 pb-4 border-b border-white/10">
+        <h2 class="text-xl font-bold tracking-tight text-white">
           Other Initiatives in the Ecosystem
         </h2>
         <a href={getPath('/ventures')} class="text-xs font-mono uppercase font-semibold text-hst-red hover:underline">
@@ -237,17 +237,17 @@ const badge = statusBadges[venture.statusType] || statusBadges.concept;
 
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         {relatedVentures.map((rel) => (
-          <div class="p-6 rounded-lg bg-white border border-neutral-200 hover:border-hst-red/40 transition-colors space-y-4">
+          <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 hover:bg-[#161616] transition-all space-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-[11px] font-mono text-neutral-500 uppercase">{rel.category}</span>
+              <span class="text-[11px] font-mono text-neutral-400 uppercase">{rel.category}</span>
               <span class="text-[10px] font-mono text-hst-red font-semibold">{rel.status}</span>
             </div>
-            <h3 class="text-lg font-bold text-neutral-900">
+            <h3 class="text-lg font-bold text-white">
               <a href={getPath(`/ventures/${rel.slug}`)} class="hover:text-hst-red transition-colors">
                 {rel.name}
               </a>
             </h3>
-            <p class="text-xs text-neutral-600 line-clamp-2 leading-relaxed">
+            <p class="text-xs text-neutral-400 line-clamp-2 leading-relaxed">
               {rel.oneLiner}
             </p>
             <a href={getPath(`/ventures/${rel.slug}`)} class="inline-flex items-center gap-1 text-xs font-mono font-semibold text-hst-red hover:underline">

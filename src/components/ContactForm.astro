@@ -6,12 +6,12 @@ interface Props {
   id?: string;
 }
 
-const { theme = 'light', id = 'contact-form' } = Astro.props;
-const isDark = theme === 'dark';
+const { theme = 'dark', id = 'contact-form' } = Astro.props;
+const isDark = theme !== 'light';
 ---
 
 <div class={`p-6 sm:p-10 rounded-xl border ${
-  isDark ? 'bg-[#0E0E10] border-white/10' : 'bg-white border-neutral-200 shadow-sm'
+  isDark ? 'bg-[#121212] border-white/10 shadow-2xl' : 'bg-white border-neutral-200 shadow-sm'
 }`}>
   <div class="mb-8">
     <h3 class={`text-2xl font-bold tracking-tight mb-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
@@ -45,7 +45,7 @@ const isDark = theme === 'dark';
           placeholder="Alex / Lakshmi"
           class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#151518] border-white/15 text-white placeholder-neutral-600 focus:border-transparent' 
+              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -66,7 +66,7 @@ const isDark = theme === 'dark';
           placeholder="name@domain.com"
           class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#151518] border-white/15 text-white placeholder-neutral-600 focus:border-transparent' 
+              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -89,7 +89,7 @@ const isDark = theme === 'dark';
           placeholder="Company or institution"
           class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#151518] border-white/15 text-white placeholder-neutral-600 focus:border-transparent' 
+              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -106,7 +106,7 @@ const isDark = theme === 'dark';
           name="inquiryType"
           class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#151518] border-white/15 text-white focus:border-transparent' 
+              ? 'bg-[#181818] border-white/10 text-white focus:border-hst-red' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 focus:border-transparent'
           }`}
         >
