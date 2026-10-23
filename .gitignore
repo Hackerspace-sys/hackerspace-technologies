@@ -23,6 +23,9 @@ pnpm-debug.log*
 Thumbs.db
 *.lnk
 
+# Local raw assets
+/lakshmi krishna.svg
+
 # Editor directories
 .vscode/
 .idea/

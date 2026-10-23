@@ -18,17 +18,17 @@ export interface FounderData {
 }
 
 export const founderData: FounderData = {
-  name: "Krishna Attipatla",
+  name: "Lakshmi Krishna Attipatla",
   title: "Founder & Lead Architect",
   company: "HackerSpace Technologies",
   tagline: "Think independently. Build deliberately. Keep moving forward.",
-  intro: "Krishna Attipatla founded HackerSpace Technologies with an ambition to build useful technology products and explore opportunities across software, digital platforms, and emerging industries.",
+  intro: "Lakshmi Krishna Attipatla founded HackerSpace Technologies with an ambition to build useful technology products and explore opportunities across software, digital platforms, and emerging industries.",
   philosophy: "Building meaningful technology requires looking past transient industry trends. Real value is created by identifying fundamental human and operational bottlenecks, designing useful experiences, and engineering robust, scalable systems that endure.",
-  photoPath: "/images/founder/krishna-attipatla.jpg", // The user will drop in their real profile photo here
-  placeholderPath: "/images/founder/founder-placeholder.svg",
+  photoPath: "/images/founder/lakshmi-krishna.svg",
+  placeholderPath: "/images/founder/lakshmi-krishna.svg",
   biography: {
     origin: "HackerSpace Technologies was conceived out of an obsession with hands-on invention — a conviction that small, highly focused teams armed with engineering discipline and relentless curiosity can build products that rival traditional institutions.",
-    vision: "Rather than restricting HST to a single narrow vertical, Krishna established HST as a multi-disciplinary technology ecosystem. The company actively conceives and incubates initiatives ranging from high-throughput web software (SurveySpace) to urban clean mobility networks (TotoAdsIndia and Toto Motors).",
+    vision: "Rather than restricting HST to a single narrow vertical, Lakshmi Krishna established HST as a multi-disciplinary technology ecosystem. The company actively conceives and incubates initiatives ranging from high-throughput web software (SurveySpace) to urban clean mobility networks (TotoAdsIndia and Toto Motors).",
     approach: "Every venture is subjected to the same foundational standard: Does this solve a real, tangible problem? Can we engineer it to be significantly more reliable, accessible, and delightful than the status quo? If yes, we build it from the ground up.",
     focusAreas: [
       {

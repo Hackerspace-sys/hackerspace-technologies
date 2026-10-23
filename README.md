@@ -41,7 +41,7 @@ Every route is statically pre-rendered to a clean directory URL (no 404s on page
 | `/about` | **About HST** | Mission, origin, operating philosophy, and venture studio governance |
 | `/ventures` | **Ventures Directory** | Searchable, category-filtered portfolio of all 9 HST initiatives |
 | `/ventures/[slug]` | **Venture Dossiers** | Individual technical specifications, problem/solution, and modules |
-| `/founder` | **Founder Profile** | In-depth biography of Krishna Attipatla, core philosophy, and focus areas |
+| `/founder` | **Founder Profile** | In-depth biography of Lakshmi Krishna Attipatla, core philosophy, and focus areas |
 | `/innovation` | **Capabilities** | The 6 core engineering disciplines and 4-step architecture lifecycle |
 | `/contact` | **Contact & Inquiries** | Functional inquiry form with honeypot anti-spam and direct channels |
 | `/privacy` | **Privacy Policy** | Comprehensive GDPR/DPDP-aligned data minimization policy |
@@ -127,11 +127,12 @@ All content is strictly separated from presentation logic:
 ### Adding or Editing Ventures
 Open `src/data/ventures.ts`. Each venture is represented as a structured TypeScript object. You can adjust status (`live`, `in-development`, `concept`, `incubation`), add features, update one-liners, or add new ventures. The portfolio directory and detail pages (`/ventures/[slug]`) update automatically upon save!
 
-### Updating the Founder Photograph
-1. Save your founder portrait as `krishna-attipatla.jpg`.
-2. Place it in `public/images/founder/krishna-attipatla.jpg`.
-3. In `src/data/founder.ts`, verify `photoPath: "/images/founder/krishna-attipatla.jpg"`.
-4. Run `npm run build` — the photograph will seamlessly replace the editorial placeholder.
+### Founder Profile Artwork & Identity
+The website is configured with the official vector portrait illustration (`public/images/founder/lakshmi-krishna.svg`) for founder **Lakshmi Krishna Attipatla**.
+If you ever wish to update the portrait:
+1. Place your new asset (e.g. `lakshmi-krishna.svg` or `lakshmi-krishna.jpg`) into `public/images/founder/`.
+2. In `src/data/founder.ts`, set `photoPath` to `"/images/founder/<your-file>"`.
+3. Run `npm run build` — the portrait updates across all routes immediately.
 
 ### Editing Official Contact Info
 Open `src/data/site.ts` and modify `siteConfig.contact.email` or `siteConfig.contact.location`.
