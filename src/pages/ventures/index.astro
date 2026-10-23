@@ -32,64 +32,64 @@ import { getPath } from '../../utils/paths';
   <section class="py-20 bg-[#000000] text-white min-h-[70vh]">
     <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
       
-      <!-- Filter Controls Bar -->
-      <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-white/10">
-        <!-- Category Filter Buttons -->
-        <div class="flex flex-wrap items-center gap-2" id="category-filters" role="tablist">
+      <!-- Filter Controls Bar (No harsh borders) -->
+      <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8">
+        <!-- Category Filter Buttons (Capsule Pill Bar) -->
+        <div class="inline-flex p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md flex-wrap gap-1" id="category-filters" role="tablist">
           <button
             type="button"
             data-filter="all"
-            class="filter-btn active px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-hst-red text-white border-hst-red shadow-md shadow-hst-red/20"
+            class="filter-btn active px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 bg-hst-red text-white shadow-lg shadow-hst-red/30"
           >
             All Ventures ({ventures.length})
           </button>
           <button
             type="button"
             data-filter="software"
-            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-[#121212] text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 text-neutral-400 hover:text-white"
           >
             Software
           </button>
           <button
             type="button"
             data-filter="mobility"
-            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-[#121212] text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 text-neutral-400 hover:text-white"
           >
             Mobility &amp; Transit
           </button>
           <button
             type="button"
             data-filter="ai"
-            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-[#121212] text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 text-neutral-400 hover:text-white"
           >
             Applied AI
           </button>
           <button
             type="button"
             data-filter="energy"
-            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-[#121212] text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 text-neutral-400 hover:text-white"
           >
             Clean Energy
           </button>
           <button
             type="button"
             data-filter="wellness"
-            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-[#121212] text-neutral-400 border-white/10 hover:text-white hover:border-white/20"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-full transition-all duration-200 text-neutral-400 hover:text-white"
           >
             Wellness &amp; Media
           </button>
         </div>
 
-        <!-- Quick Search Bar -->
+        <!-- Quick Search Bar (Borderless Pill) -->
         <div class="w-full md:w-72 relative">
           <input
             type="text"
             id="venture-search"
             placeholder="Search by keyword, tag..."
-            class="w-full px-4 py-2.5 text-xs font-mono rounded-md border border-white/10 bg-[#121212] text-white placeholder-neutral-500 focus:outline-none focus:ring-2 focus:ring-hst-red"
+            class="w-full px-5 py-3 text-xs font-mono rounded-full bg-white/[0.05] text-white placeholder-neutral-500 focus:outline-none focus:ring-1 focus:ring-hst-red transition-all"
             aria-label="Search ventures"
           />
-          <span class="absolute right-3 top-2.5 text-neutral-500 text-xs">⌕</span>
+          <span class="absolute right-4 top-3 text-neutral-500 text-xs">⌕</span>
         </div>
       </div>
 
@@ -195,12 +195,12 @@ import { getPath } from '../../utils/paths';
     filterBtns.forEach((btn) => {
       btn.addEventListener('click', () => {
         filterBtns.forEach((b) => {
-          b.classList.remove('bg-hst-red', 'text-white', 'border-hst-red', 'shadow-md', 'shadow-hst-red/20');
-          b.classList.add('bg-[#121212]', 'text-neutral-400', 'border-white/10');
+          b.classList.remove('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
+          b.classList.add('text-neutral-400');
         });
 
-        btn.classList.remove('bg-[#121212]', 'text-neutral-400', 'border-white/10');
-        btn.classList.add('bg-hst-red', 'text-white', 'border-hst-red', 'shadow-md', 'shadow-hst-red/20');
+        btn.classList.remove('text-neutral-400');
+        btn.classList.add('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
 
         activeFilter = btn.getAttribute('data-filter') || 'all';
         applyFilters();

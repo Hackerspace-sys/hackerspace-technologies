@@ -10,199 +10,175 @@ import { founderData } from '../data/founder';
 import { siteConfig } from '../data/site';
 import { getPath } from '../utils/paths';
 
-// Select top ventures for homepage showcase
+// Top ventures
 const featuredVentures = ventures.filter(v => v.featured);
 const otherVentures = ventures.filter(v => !v.featured);
 ---
 
 <BaseLayout 
   title="HackerSpace Technologies — Building What's Next"
-  description="HackerSpace Technologies builds ambitious digital products, platforms, and technology-driven ventures across software, infrastructure, and emerging industries."
+  description="HackerSpace Technologies builds ambitious digital products, scalable software platforms, and technology-driven ventures across software, clean mobility, and emerging industries."
   theme="dark"
 >
   <!-- ========================================================================= -->
-  <!-- HERO SECTION (Pitch Black #000000 / Linear & JetBrains Tech Atmosphere)   -->
+  <!-- HERO SECTION (Cinematic Linear-Style Open Canvas with Ambient Spotlight)  -->
   <!-- ========================================================================= -->
-  <section class="relative min-h-[94vh] flex items-center bg-[#000000] text-white overflow-hidden py-20 lg:py-28 bg-grid-subtle-dark border-b border-white/10">
-    <!-- Ambient Red Gradient Glows (Enclosed) -->
+  <section class="relative min-h-[96vh] flex flex-col justify-center items-center bg-[#000000] text-white overflow-hidden pt-28 pb-20">
+    <!-- Deep Ambient Radial Glows (No harsh boxes) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
-      <div class="absolute top-1/4 -right-32 w-[600px] h-[600px] bg-hst-red/15 rounded-full blur-[160px]"></div>
-      <div class="absolute bottom-10 -left-20 w-[450px] h-[450px] bg-hst-red/10 rounded-full blur-[140px]"></div>
-      <div class="absolute top-1/2 left-1/3 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-white/[0.02] rounded-full blur-[180px]"></div>
+      <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[1100px] h-[550px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,38,38,0.22),transparent_75%)]"></div>
+      <div class="absolute top-1/3 left-1/4 w-[500px] h-[500px] bg-white/[0.015] rounded-full blur-[140px]"></div>
+      <div class="absolute bottom-10 right-1/4 w-[600px] h-[400px] bg-hst-red/[0.08] rounded-full blur-[160px]"></div>
     </div>
 
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-        
-        <!-- Left Column: Confident Editorial Typography (col-span-7) -->
-        <div class="lg:col-span-7 space-y-8">
-          
-          <!-- Live Telemetry Status Pill -->
-          <div class="inline-flex items-center gap-3 px-3.5 py-1.5 rounded-full bg-[#121212] border border-white/10 text-xs font-mono tracking-widest uppercase text-neutral-300 shadow-lg shadow-black/60">
-            <span class="flex h-2 w-2 relative">
-              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-hst-red opacity-75"></span>
-              <span class="relative inline-flex rounded-full h-2 w-2 bg-hst-red"></span>
-            </span>
-            <span class="font-semibold text-white">HST CORE ENGINE</span>
-            <span class="text-neutral-600">//</span>
-            <span class="text-neutral-400">INDEPENDENT VENTURE STUDIO</span>
-          </div>
+    <!-- Subtle Technical Background Grid -->
+    <div class="absolute inset-0 bg-grid-subtle-dark opacity-40 pointer-events-none" aria-hidden="true"></div>
 
-          <!-- Master Headline -->
-          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight leading-[1.05] text-white text-balance">
-            Building Technology.<br />
-            <span class="relative inline-block text-white">
-              Creating Possibilities.
-              <span class="absolute -bottom-1.5 left-0 right-0 h-[3px] bg-hst-red rounded-full shadow-[0_0_12px_rgba(255,38,38,0.8)]"></span>
-            </span>
-          </h1>
-
-          <!-- Supporting Statement -->
-          <p class="text-lg sm:text-xl text-neutral-300 max-w-xl font-normal leading-relaxed text-balance">
-            HackerSpace Technologies builds ambitious digital products, scalable software platforms, and technology-driven ventures across software, clean mobility, and emerging industries.
-          </p>
-
-          <!-- Dual Action CTAs -->
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-            <a
-              href={getPath('/ventures')}
-              class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-sm shadow-xl shadow-hst-red/30 focus-visible:ring-2 focus-visible:ring-hst-red"
-            >
-              <span>Explore Our Ventures</span>
-              <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1">→</span>
-            </a>
-
-            <a
-              href={getPath('/founder')}
-              class="inline-flex items-center justify-center px-7 py-4 text-xs font-semibold tracking-widest uppercase text-neutral-200 hover:text-white bg-[#121212] border border-white/15 hover:border-white/40 transition-all duration-300 rounded-sm focus-visible:ring-2 focus-visible:ring-white"
-            >
-              Meet the Founder
-            </a>
-          </div>
-
-          <!-- Bottom Telemetry Indicator Bar -->
-          <div class="pt-8 border-t border-white/10 grid grid-cols-3 gap-4 text-xs font-mono text-neutral-400 max-w-lg">
-            <div class="p-3 rounded-lg bg-[#121212]/80 border border-white/5">
-              <span class="text-white font-bold block text-lg font-sans">9</span>
-              <span class="text-[11px] text-neutral-400">Ventures Conceived</span>
-            </div>
-            <div class="p-3 rounded-lg bg-[#121212]/80 border border-white/5">
-              <span class="text-white font-bold block text-lg font-sans">Zero-Debt</span>
-              <span class="text-[11px] text-neutral-400">100% Independent</span>
-            </div>
-            <div class="p-3 rounded-lg bg-[#121212]/80 border border-white/5">
-              <span class="text-hst-red font-bold block text-lg font-sans">Multi-Track</span>
-              <span class="text-[11px] text-neutral-400">Software &amp; Mobility</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Right Column: Geometric Monogram Sculpture Visual (col-span-5) -->
-        <div class="lg:col-span-5 relative flex items-center justify-center">
-          <div class="w-full max-w-md aspect-square rounded-2xl border border-white/10 bg-[#121212]/95 p-8 sm:p-10 relative flex flex-col justify-between backdrop-blur-2xl shadow-2xl overflow-hidden group hover:border-hst-red/40 transition-colors">
-            
-            <!-- Precision Grid Texture -->
-            <div class="absolute inset-0 bg-grid-subtle-dark opacity-60 pointer-events-none"></div>
-            <div class="absolute top-0 right-0 w-24 h-24 border-t-2 border-r-2 border-hst-red/40"></div>
-            <div class="absolute bottom-0 left-0 w-24 h-24 border-b-2 border-l-2 border-white/10"></div>
-
-            <!-- Top Monogram Spec Label -->
-            <div class="flex items-center justify-between text-xs font-mono text-neutral-400 relative z-10">
-              <span class="flex items-center gap-2">
-                <span class="w-2 h-2 rounded-full bg-hst-red animate-pulse"></span>
-                <span class="text-neutral-300">TELEMETRY MATRIX</span>
-              </span>
-              <span class="text-hst-red font-semibold">HST-SYS-01</span>
-            </div>
-
-            <!-- Central Monogram Silhouette with Laser Drop Shadow -->
-            <div class="my-auto py-8 flex items-center justify-center relative z-10">
-              <svg 
-                viewBox="0 0 1080 360" 
-                fill="none" 
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-full max-w-xs transition-transform duration-500 group-hover:scale-105 filter drop-shadow-[0_15px_35px_rgba(255,38,38,0.3)]"
-              >
-                <!-- Red T Accent -->
-                <path d="M970.404 0.212836C895.395 0.22255 803.175 0.297197 728.166 0.209282L682.142 70.6929C722.477 70.6981 762.812 70.6525 803.146 70.6392C804.276 70.6388 805.405 70.7454 807.035 70.8272C765.512 165.566 726.812 261.856 686.592 356.908C686.079 358.121 686.866 359.427 688.182 359.361C688.762 359.332 689.293 359.299 689.728 359.313C694.058 359.456 698.314 359.253 702.646 359.266C716.009 359.306 729.372 359.209 742.734 359.313C749.472 359.365 756.21 359.698 762.944 359.988C765.042 360.077 766.82 359.718 767.674 357.605C769.914 352.066 772.11 346.511 774.306 340.955L774.868 339.534C777.471 332.95 779.997 326.334 782.665 319.777C786.275 310.902 790.042 302.09 793.644 293.212C796.979 284.996 800.16 276.719 803.456 268.488C805.923 262.328 808.491 256.209 810.968 250.053C813.618 243.465 816.154 236.831 818.85 230.261C821.948 222.711 825.206 215.226 828.322 207.683C830.985 201.238 833.518 194.74 836.158 188.286C839.34 180.509 842.601 172.763 845.777 164.984C848.862 157.428 851.858 149.836 854.94 142.278C858.109 134.51 861.372 126.78 864.525 119.005C867.598 111.428 870.505 103.783 873.629 96.2265C876.747 88.6881 880.074 81.2363 883.247 73.7205L883.28 73.6429C884.515 70.7182 884.561 70.6082 887.602 70.6081C933.717 70.607 979.831 70.5613 1025.94 70.7017C1029.59 70.7128 1031.69 69.2885 1033.63 66.5806C1038.52 59.7796 1043.53 53.062 1048.55 46.3629C1052.15 41.5756 1055.87 36.8897 1059.5 32.1272C1063.56 26.7941 1067.6 21.4453 1071.6 16.0655C1074.17 12.6072 1076.72 9.13023 1079.14 5.56826C1080.95 2.9018 1079.8 0.590079 1076.6 0.266288C1075.28 0.133449 1073.95 0.156306 1072.63 0.156922C1038.55 0.172614 1004.48 0.20844 970.404 0.212836Z" fill="#FF2626"/>
-                <!-- White HS Body -->
-                <path d="M358.652 160.55C352.35 157.293 345.964 154.198 339.39 150.888C338.501 150.581 337.557 150.053 337.223 150.311C335.502 151.64 333.563 151.308 331.666 151.329C329.258 151.355 326.85 151.325 324.442 151.325C272.187 151.325 219.932 151.326 167.678 151.318C166.543 151.318 165.408 151.21 163.909 151.133C184.403 101.066 204.483 51.3793 226.257 1.72722C224.503 1.53429 223.16 1.25828 221.817 1.25784C197.136 1.25006 172.455 1.30299 147.774 1.24474C145.617 1.23965 144.416 1.91703 143.684 3.89222C142.207 7.88246 140.668 11.8525 139.057 15.7914C135.885 23.5507 132.582 31.2568 129.456 39.0344C126.772 45.7148 124.309 52.4834 121.659 59.1779C118.441 67.3066 115.111 75.3908 111.865 83.5086C108.834 91.0904 105.879 98.7025 102.837 106.28C100.107 113.081 97.3011 119.852 94.5361 126.639C91.9888 132.892 89.4512 139.148 86.9101 145.403C83.7093 153.282 80.4622 161.143 77.3233 169.047C74.7009 175.65 72.2587 182.324 69.6377 188.928C67.454 194.43 65.0691 199.852 62.8764 205.351C59.3267 214.252 55.936 223.217 52.3396 232.099C48.7414 240.986 44.9445 249.792 41.2871 258.655C37.5426 267.729 33.8587 276.828 30.1538 285.918C27.5634 292.274 24.9393 298.617 22.4087 304.996C19.3117 312.804 16.4432 320.704 13.2084 328.453C9.2937 337.831 5.0725 347.081 1.07198 356.424C0.721527 357.243 0 358.34 0 359.207C2.4977 359.207 5.55459 359.205 7.58607 359.207C29.1379 359.223 50.6899 359.237 72.2417 359.265C73.9255 359.268 75.6105 359.45 77.2926 359.419C78.5436 359.397 79.5991 358.969 80.0789 357.587C81.47 353.581 82.8914 349.585 84.3697 345.611C86.5526 339.742 88.7603 333.881 91.0221 328.042C93.1156 322.638 95.3354 317.281 97.424 311.875C99.5928 306.26 101.6 300.583 103.807 294.984C106.412 288.376 109.175 281.83 111.834 275.243C114.933 267.563 117.937 259.844 121.087 252.184C125.407 241.678 129.826 231.211 134.265 220.577L139.216 220.562C196.559 220.39 254.002 220.218 311.446 220.056C311.668 220.055 311.897 220.184 312.111 220.279C312.209 220.323 312.291 220.423 312.357 220.514C312.426 220.61 312.466 220.727 312.533 220.863C310.07 226.954 307.633 233.079 305.117 239.171C303.086 244.089 300.967 248.971 298.876 253.863C296.319 259.847 293.734 265.819 291.189 271.807C287.58 280.298 284.014 288.806 280.397 297.292C276.779 305.78 273.103 314.243 269.489 322.733C266.754 329.157 264.137 335.632 261.353 342.034C259.301 346.757 256.987 351.752 254.697 356.764C254.136 357.991 254.937 359.317 256.285 359.266C256.695 359.25 257.098 359.237 257.483 359.239C261.816 359.261 266.15 359.159 270.483 359.157C328.275 359.128 386.067 359.094 443.859 359.089C484.673 359.086 525.488 359.127 566.303 359.146C581.231 359.153 596.159 359.13 611.086 359.185C612.936 359.192 614.008 358.481 614.634 356.81C615.546 354.373 616.506 351.953 617.481 349.54C621.512 339.562 625.423 329.533 629.634 319.631C633.664 310.152 638.007 300.804 642.221 291.402C645.943 283.096 649.696 274.802 653.401 266.487C656.961 258.497 660.36 250.434 664.048 242.504C666.947 236.27 670.149 230.175 673.278 224.05C674.457 221.741 674.123 220.565 671.54 219.206C663.88 215.175 656.205 211.171 648.544 207.141C630.319 197.554 612.11 187.937 593.874 178.371C575.716 168.846 557.563 159.307 539.349 149.887C524.426 142.17 509.433 134.585 494.437 127.007C485.474 122.478 476.428 118.111 467.454 113.603C457.767 108.736 448.121 103.789 438.387 98.8416C438.477 98.013 438.415 97.2628 438.651 96.6223C441.393 89.2004 444.223 81.8104 446.938 74.3789L447.029 74.1303C448.299 70.648 448.307 70.6263 452.179 70.6277H682.142L728.166 0.209282C648.1 0.115433 588.263 -0.0215386 508.2 0.937658C483.884 1.22901 459.561 1.00856 435.242 0.868029C425.256 0.810356 415.27 0.415926 405.29 0.00584679C403.201 -0.0800021 402.129 0.782048 401.404 2.42659C400.692 4.04251 400.142 5.72854 399.466 7.36143C396.799 13.8071 394.118 20.2467 391.429 26.6835C388.831 32.9037 386.198 39.1095 383.617 45.3366C380.987 51.6807 378.428 58.0539 375.79 64.3946C372.639 71.9688 369.447 79.5263 366.255 87.0836L366.174 87.2762C363.92 92.613 361.634 97.9362 359.367 103.268C356.957 108.937 354.547 114.607 352.149 120.282C351.281 122.335 351.567 123.258 353.534 124.387C355.09 125.279 356.736 126.014 358.303 126.888C372.955 135.061 387.597 143.252 402.245 151.433C416.081 159.161 429.93 166.867 443.756 174.615C458.192 182.704 472.617 190.813 487.026 198.949C496.043 204.039 505.003 209.229 514.024 214.31C522.119 218.868 530.276 223.317 538.383 227.854C552.834 235.942 567.26 244.075 581.723 252.141C583.129 252.926 583.161 253.688 582.529 255.024C580.207 259.929 577.975 264.878 575.757 269.831C572.617 276.842 569.52 283.871 566.334 291.051C565.1 291.051 563.905 291.051 562.71 291.051L525.799 291.048C472.483 291.043 419.167 291.038 365.852 291.034C364.286 291.034 362.719 291.104 361.157 291.042C359.041 290.959 358.599 290.198 359.342 288.377C361.662 282.695 363.953 277 366.222 271.297C368.495 265.583 370.749 259.862 372.97 254.129C375.102 248.624 377.167 243.093 379.289 237.585C380.948 233.279 382.652 228.991 384.332 224.693C386.006 220.408 387.709 216.133 389.338 211.83C391.511 206.09 393.58 200.31 395.78 194.581C397.293 190.642 398.952 186.76 400.637 182.627C397.277 180.833 393.945 179.029 390.591 177.267C379.952 171.681 369.327 166.067 358.652 160.55Z" fill="#FFFFFF"/>
-              </svg>
-            </div>
-
-            <!-- Bottom Spec Label -->
-            <div class="pt-4 border-t border-white/10 flex items-center justify-between text-[11px] font-mono text-neutral-400 relative z-10">
-              <span>HST BRAND ARCHITECTURE</span>
-              <span class="text-hst-red font-semibold">VECTOR SOURCE TRUTH</span>
-            </div>
-          </div>
-        </div>
-
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10 text-center">
+      
+      <!-- Live Telemetry Status Pill (Borderless Capsule) -->
+      <div class="inline-flex items-center gap-3 px-4 py-2 rounded-full bg-white/[0.05] hover:bg-white/[0.08] transition-all text-xs font-mono tracking-[0.2em] uppercase text-neutral-300 mb-8 backdrop-blur-md animate-fade-in shadow-xl">
+        <span class="flex h-2 w-2 relative">
+          <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-hst-red opacity-80"></span>
+          <span class="relative inline-flex rounded-full h-2 w-2 bg-hst-red shadow-[0_0_8px_rgba(255,38,38,1)]"></span>
+        </span>
+        <span class="font-semibold text-white">HST Core Engine</span>
+        <span class="text-neutral-600">//</span>
+        <span class="text-neutral-400">Independent Venture Studio</span>
       </div>
+
+      <!-- Grand Cinematic Display Headline -->
+      <h1 class="text-5xl sm:text-7xl lg:text-8xl font-extrabold tracking-[-0.04em] leading-[1.02] text-gradient-silver text-balance max-w-5xl mx-auto mb-8 animate-fade-in">
+        Building Technology.<br />
+        <span class="text-gradient-red">Creating Possibilities.</span>
+      </h1>
+
+      <!-- Fluid Supporting Copy -->
+      <p class="text-lg sm:text-2xl text-neutral-400 font-normal leading-relaxed max-w-2xl mx-auto mb-10 text-balance animate-fade-in">
+        HackerSpace Technologies builds ambitious digital products, scalable software platforms, and technology-driven ventures across software, clean mobility, and emerging industries.
+      </p>
+
+      <!-- Sleek Dual Action Buttons (Rounded-Full Pill Geometry) -->
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-16 animate-fade-in">
+        <a
+          href={getPath('/ventures')}
+          class="group relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover transition-all duration-300 rounded-full shadow-2xl shadow-hst-red/40 hover:scale-105 active:scale-95 focus-visible:ring-2 focus-visible:ring-hst-red"
+        >
+          <span>Explore Our Ventures</span>
+          <span class="ml-2 transition-transform duration-300 group-hover:translate-x-1.5">→</span>
+        </a>
+
+        <a
+          href={getPath('/founder')}
+          class="inline-flex items-center justify-center px-8 py-4 text-xs font-semibold tracking-widest uppercase text-neutral-300 hover:text-white bg-white/[0.05] hover:bg-white/[0.1] backdrop-blur-md transition-all duration-300 rounded-full focus-visible:ring-2 focus-visible:ring-white"
+        >
+          Meet the Founder
+        </a>
+      </div>
+
+      <!-- Linear-Style Floating Hologram & Monogram Sculpture (Zero boxy borders) -->
+      <div class="relative max-w-3xl mx-auto pt-6">
+        <!-- Laser Sweep Line -->
+        <div class="laser-track mb-8"></div>
+
+        <div class="relative py-8 flex flex-col items-center justify-center">
+          <!-- Monogram illuminated with ambient red drop shadow -->
+          <svg 
+            viewBox="0 0 1080 360" 
+            fill="none" 
+            xmlns="http://www.w3.org/2000/svg"
+            class="w-full max-w-md filter drop-shadow-[0_20px_50px_rgba(255,38,38,0.35)] animate-float"
+          >
+            <!-- Red T Accent -->
+            <path d="M970.404 0.212836C895.395 0.22255 803.175 0.297197 728.166 0.209282L682.142 70.6929C722.477 70.6981 762.812 70.6525 803.146 70.6392C804.276 70.6388 805.405 70.7454 807.035 70.8272C765.512 165.566 726.812 261.856 686.592 356.908C686.079 358.121 686.866 359.427 688.182 359.361C688.762 359.332 689.293 359.299 689.728 359.313C694.058 359.456 698.314 359.253 702.646 359.266C716.009 359.306 729.372 359.209 742.734 359.313C749.472 359.365 756.21 359.698 762.944 359.988C765.042 360.077 766.82 359.718 767.674 357.605C769.914 352.066 772.11 346.511 774.306 340.955L774.868 339.534C777.471 332.95 779.997 326.334 782.665 319.777C786.275 310.902 790.042 302.09 793.644 293.212C796.979 284.996 800.16 276.719 803.456 268.488C805.923 262.328 808.491 256.209 810.968 250.053C813.618 243.465 816.154 236.831 818.85 230.261C821.948 222.711 825.206 215.226 828.322 207.683C830.985 201.238 833.518 194.74 836.158 188.286C839.34 180.509 842.601 172.763 845.777 164.984C848.862 157.428 851.858 149.836 854.94 142.278C858.109 134.51 861.372 126.78 864.525 119.005C867.598 111.428 870.505 103.783 873.629 96.2265C876.747 88.6881 880.074 81.2363 883.247 73.7205L883.28 73.6429C884.515 70.7182 884.561 70.6082 887.602 70.6081C933.717 70.607 979.831 70.5613 1025.94 70.7017C1029.59 70.7128 1031.69 69.2885 1033.63 66.5806C1038.52 59.7796 1043.53 53.062 1048.55 46.3629C1052.15 41.5756 1055.87 36.8897 1059.5 32.1272C1063.56 26.7941 1067.6 21.4453 1071.6 16.0655C1074.17 12.6072 1076.72 9.13023 1079.14 5.56826C1080.95 2.9018 1079.8 0.590079 1076.6 0.266288C1075.28 0.133449 1073.95 0.156306 1072.63 0.156922C1038.55 0.172614 1004.48 0.20844 970.404 0.212836Z" fill="#FF2626"/>
+            <!-- White HS Body -->
+            <path d="M358.652 160.55C352.35 157.293 345.964 154.198 339.39 150.888C338.501 150.581 337.557 150.053 337.223 150.311C335.502 151.64 333.563 151.308 331.666 151.329C329.258 151.355 326.85 151.325 324.442 151.325C272.187 151.325 219.932 151.326 167.678 151.318C166.543 151.318 165.408 151.21 163.909 151.133C184.403 101.066 204.483 51.3793 226.257 1.72722C224.503 1.53429 223.16 1.25828 221.817 1.25784C197.136 1.25006 172.455 1.30299 147.774 1.24474C145.617 1.23965 144.416 1.91703 143.684 3.89222C142.207 7.88246 140.668 11.8525 139.057 15.7914C135.885 23.5507 132.582 31.2568 129.456 39.0344C126.772 45.7148 124.309 52.4834 121.659 59.1779C118.441 67.3066 115.111 75.3908 111.865 83.5086C108.834 91.0904 105.879 98.7025 102.837 106.28C100.107 113.081 97.3011 119.852 94.5361 126.639C91.9888 132.892 89.4512 139.148 86.9101 145.403C83.7093 153.282 80.4622 161.143 77.3233 169.047C74.7009 175.65 72.2587 182.324 69.6377 188.928C67.454 194.43 65.0691 199.852 62.8764 205.351C59.3267 214.252 55.936 223.217 52.3396 232.099C48.7414 240.986 44.9445 249.792 41.2871 258.655C37.5426 267.729 33.8587 276.828 30.1538 285.918C27.5634 292.274 24.9393 298.617 22.4087 304.996C19.3117 312.804 16.4432 320.704 13.2084 328.453C9.2937 337.831 5.0725 347.081 1.07198 356.424C0.721527 357.243 0 358.34 0 359.207C2.4977 359.207 5.55459 359.205 7.58607 359.207C29.1379 359.223 50.6899 359.237 72.2417 359.265C73.9255 359.268 75.6105 359.45 77.2926 359.419C78.5436 359.397 79.5991 358.969 80.0789 357.587C81.47 353.581 82.8914 349.585 84.3697 345.611C86.5526 339.742 88.7603 333.881 91.0221 328.042C93.1156 322.638 95.3354 317.281 97.424 311.875C99.5928 306.26 101.6 300.583 103.807 294.984C106.412 288.376 109.175 281.83 111.834 275.243C114.933 267.563 117.937 259.844 121.087 252.184C125.407 241.678 129.826 231.211 134.265 220.577L139.216 220.562C196.559 220.39 254.002 220.218 311.446 220.056C311.668 220.055 311.897 220.184 312.111 220.279C312.209 220.323 312.291 220.423 312.357 220.514C312.426 220.61 312.466 220.727 312.533 220.863C310.07 226.954 307.633 233.079 305.117 239.171C303.086 244.089 300.967 248.971 298.876 253.863C296.319 259.847 293.734 265.819 291.189 271.807C287.58 280.298 284.014 288.806 280.397 297.292C276.779 305.78 273.103 314.243 269.489 322.733C266.754 329.157 264.137 335.632 261.353 342.034C259.301 346.757 256.987 351.752 254.697 356.764C254.136 357.991 254.937 359.317 256.285 359.266C256.695 359.25 257.098 359.237 257.483 359.239C261.816 359.261 266.15 359.159 270.483 359.157C328.275 359.128 386.067 359.094 443.859 359.089C484.673 359.086 525.488 359.127 566.303 359.146C581.231 359.153 596.159 359.13 611.086 359.185C612.936 359.192 614.008 358.481 614.634 356.81C615.546 354.373 616.506 351.953 617.481 349.54C621.512 339.562 625.423 329.533 629.634 319.631C633.664 310.152 638.007 300.804 642.221 291.402C645.943 283.096 649.696 274.802 653.401 266.487C656.961 258.497 660.36 250.434 664.048 242.504C666.947 236.27 670.149 230.175 673.278 224.05C674.457 221.741 674.123 220.565 671.54 219.206C663.88 215.175 656.205 211.171 648.544 207.141C630.319 197.554 612.11 187.937 593.874 178.371C575.716 168.846 557.563 159.307 539.349 149.887C524.426 142.17 509.433 134.585 494.437 127.007C485.474 122.478 476.428 118.111 467.454 113.603C457.767 108.736 448.121 103.789 438.387 98.8416C438.477 98.013 438.415 97.2628 438.651 96.6223C441.393 89.2004 444.223 81.8104 446.938 74.3789L447.029 74.1303C448.299 70.648 448.307 70.6263 452.179 70.6277H682.142L728.166 0.209282C648.1 0.115433 588.263 -0.0215386 508.2 0.937658C483.884 1.22901 459.561 1.00856 435.242 0.868029C425.256 0.810356 415.27 0.415926 405.29 0.00584679C403.201 -0.0800021 402.129 0.782048 401.404 2.42659C400.692 4.04251 400.142 5.72854 399.466 7.36143C396.799 13.8071 394.118 20.2467 391.429 26.6835C388.831 32.9037 386.198 39.1095 383.617 45.3366C380.987 51.6807 378.428 58.0539 375.79 64.3946C372.639 71.9688 369.447 79.5263 366.255 87.0836L366.174 87.2762C363.92 92.613 361.634 97.9362 359.367 103.268C356.957 108.937 354.547 114.607 352.149 120.282C351.281 122.335 351.567 123.258 353.534 124.387C355.09 125.279 356.736 126.014 358.303 126.888C372.955 135.061 387.597 143.252 402.245 151.433C416.081 159.161 429.93 166.867 443.756 174.615C458.192 182.704 472.617 190.813 487.026 198.949C496.043 204.039 505.003 209.229 514.024 214.31C522.119 218.868 530.276 223.317 538.383 227.854C552.834 235.942 567.26 244.075 581.723 252.141C583.129 252.926 583.161 253.688 582.529 255.024C580.207 259.929 577.975 264.878 575.757 269.831C572.617 276.842 569.52 283.871 566.334 291.051C565.1 291.051 563.905 291.051 562.71 291.051L525.799 291.048C472.483 291.043 419.167 291.038 365.852 291.034C364.286 291.034 362.719 291.104 361.157 291.042C359.041 290.959 358.599 290.198 359.342 288.377C361.662 282.695 363.953 277 366.222 271.297C368.495 265.583 370.749 259.862 372.97 254.129C375.102 248.624 377.167 243.093 379.289 237.585C380.948 233.279 382.652 228.991 384.332 224.693C386.006 220.408 387.709 216.133 389.338 211.83C391.511 206.09 393.58 200.31 395.78 194.581C397.293 190.642 398.952 186.76 400.637 182.627C397.277 180.833 393.945 179.029 390.591 177.267C379.952 171.681 369.327 166.067 358.652 160.55Z" fill="#FFFFFF"/>
+          </svg>
+
+          <!-- Floating Micro-Pill Metrics -->
+          <div class="flex flex-wrap items-center justify-center gap-6 mt-8 text-xs font-mono text-neutral-400">
+            <span class="flex items-center gap-2">
+              <span class="w-1.5 h-1.5 rounded-full bg-hst-red"></span>
+              9 Active Ecosystem Ventures
+            </span>
+            <span class="text-neutral-700">•</span>
+            <span>100% Self-Directed Capital</span>
+            <span class="text-neutral-700">•</span>
+            <span>Software &amp; Electric Mobility</span>
+          </div>
+        </div>
+      </div>
+
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 01. BRAND THESIS (Pure Black #000000 with #121212 Bento Cards)            -->
+  <!-- 01. BRAND THESIS (Fluid Editorial Storytelling — Zero Boxy Borders)       -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white border-b border-white/10" id="philosophy-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
-        
-        <!-- Left: Category Label (col-span-4) -->
-        <div class="lg:col-span-4 space-y-4">
-          <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-hst-red font-semibold">
-            <span>// 01</span>
-            <span>Corporate Philosophy</span>
-          </div>
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
-            An Independent Vision.<br />
-            <span class="text-neutral-400">A Technology-First Mindset.</span>
-          </h2>
-          <div class="w-16 h-1 bg-hst-red rounded-full"></div>
-        </div>
+  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="philosophy-section">
+    <!-- Ambient Backdrop Light -->
+    <div class="absolute top-1/2 right-0 w-[500px] h-[500px] bg-hst-red/[0.04] rounded-full blur-[140px] pointer-events-none"></div>
 
-        <!-- Right: Editorial Statement & Bento Feature Cards (col-span-8) -->
-        <div class="lg:col-span-8 space-y-8 text-neutral-300 text-base sm:text-lg leading-relaxed font-normal">
-          <p class="text-xl sm:text-2xl text-white font-medium leading-snug">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      
+      <!-- Top Section Identifier -->
+      <div class="max-w-3xl mb-16">
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-white/[0.05] text-neutral-300 w-fit mb-6">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
+          <span>// 01 Corporate Thesis</span>
+        </div>
+        <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
+          An Independent Vision.<br />
+          <span class="text-neutral-500">A Technology-First Mindset.</span>
+        </h2>
+      </div>
+
+      <!-- Main Narrative + 3 Fluid Columns (No rigid boxes) -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div class="lg:col-span-5 space-y-6 text-neutral-400 text-lg sm:text-xl leading-relaxed">
+          <p class="text-white text-xl sm:text-2xl font-medium leading-snug">
             HackerSpace Technologies builds products, platforms, and technology-driven ventures designed to solve meaningful problems and create lasting value.
           </p>
-          <p>
+          <p class="text-base text-neutral-400">
             We operate as an independent technology company with a multidisciplinary portfolio. Rather than functioning as a client-service agency or an unproven incubator, we engineer, launch, and operate proprietary digital products, software platforms, transit ad networks, and clean mobility technologies.
           </p>
-          <p>
-            Our work is grounded in first principles: identifying concrete human or commercial friction, designing uncompromised user experiences, and writing robust, maintainable code. We believe the future belongs to organizations that can bridge digital intelligence with physical systems.
-          </p>
-          
-          <!-- 3 Bento Feature Cards -->
-          <div class="pt-6 grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 transition-colors">
-              <span class="text-xs font-mono font-bold text-hst-red uppercase block mb-1">01 // Governance</span>
-              <h3 class="text-base font-bold font-sans text-white">100% Independent</h3>
-              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Free to build for generational horizons without external compromise or artificial milestones.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 transition-colors">
-              <span class="text-xs font-mono font-bold text-hst-red uppercase block mb-1">02 // Synergy</span>
-              <h3 class="text-base font-bold font-sans text-white">Systemic Reach</h3>
-              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Cross-pollinating modern cloud software agility with tangible physical electric transit hardware.</p>
-            </div>
-            <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 transition-colors">
-              <span class="text-xs font-mono font-bold text-hst-red uppercase block mb-1">03 // Verification</span>
-              <h3 class="text-base font-bold font-sans text-white">Factual Execution</h3>
-              <p class="text-xs text-neutral-400 mt-2 leading-relaxed">Measured strictly by real-world uptime, utility, and execution fidelity rather than hype cycles.</p>
-            </div>
-          </div>
         </div>
 
+        <div class="lg:col-span-7 grid grid-cols-1 sm:grid-cols-3 gap-6">
+          <!-- Fluid Column 1 -->
+          <div class="card-fluid p-7 rounded-2xl group hover:-translate-y-1 transition-all">
+            <span class="text-2xl font-mono font-extrabold text-hst-red block mb-3">01</span>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-hst-red transition-colors">100% Independent</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Free to build for generational horizons without external compromise or artificial short-term targets.</p>
+          </div>
+
+          <!-- Fluid Column 2 -->
+          <div class="card-fluid p-7 rounded-2xl group hover:-translate-y-1 transition-all">
+            <span class="text-2xl font-mono font-extrabold text-hst-red block mb-3">02</span>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-hst-red transition-colors">Systemic Reach</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Cross-pollinating modern cloud software agility with tangible physical electric transit hardware.</p>
+          </div>
+
+          <!-- Fluid Column 3 -->
+          <div class="card-fluid p-7 rounded-2xl group hover:-translate-y-1 transition-all">
+            <span class="text-2xl font-mono font-extrabold text-hst-red block mb-3">03</span>
+            <h3 class="text-lg font-bold text-white mb-2 group-hover:text-hst-red transition-colors">Factual Execution</h3>
+            <p class="text-xs text-neutral-400 leading-relaxed">Measured strictly by real-world uptime, utility, and execution fidelity rather than hype cycles.</p>
+          </div>
+        </div>
       </div>
+
     </div>
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 02. VENTURES ECOSYSTEM (Interactive Bento Portfolio Grid on #000000)      -->
+  <!-- 02. VENTURES ECOSYSTEM (Linear-Style Fluid Bento Showcase)                -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white border-b border-white/10" id="ventures-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="ventures-section">
+    <!-- Ambient Spotlight -->
+    <div class="absolute top-1/4 left-1/2 -translate-x-1/2 w-[800px] h-[600px] bg-[radial-gradient(circle_at_center,rgba(255,38,38,0.1),transparent_70%)] pointer-events-none"></div>
+
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <!-- Section Header -->
       <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
@@ -221,46 +197,46 @@ const otherVentures = ventures.filter(v => !v.featured);
         </a>
       </div>
 
-      <!-- Category Filter Tabs -->
-      <div class="flex flex-wrap items-center gap-2 mb-10 pb-4 border-b border-white/10" id="venture-filter-bar">
+      <!-- Floating Capsule Filter Bar (No harsh borders) -->
+      <div class="inline-flex p-1.5 rounded-full bg-white/[0.04] backdrop-blur-md mb-12 flex-wrap gap-1" id="venture-filter-bar">
         <button 
           type="button" 
           data-filter="all" 
-          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all shadow-md shadow-hst-red/20 active"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider bg-hst-red text-white transition-all shadow-lg shadow-hst-red/30 active"
         >
           All (9)
         </button>
         <button 
           type="button" 
           data-filter="software" 
-          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#121212] text-neutral-400 hover:text-white border border-white/10 transition-all"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
         >
           Software &amp; Web
         </button>
         <button 
           type="button" 
           data-filter="mobility" 
-          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#121212] text-neutral-400 hover:text-white border border-white/10 transition-all"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
         >
           Clean Mobility &amp; EV
         </button>
         <button 
           type="button" 
           data-filter="ai" 
-          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#121212] text-neutral-400 hover:text-white border border-white/10 transition-all"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
         >
           Applied AI &amp; Utility
         </button>
         <button 
           type="button" 
           data-filter="media" 
-          class="venture-filter-btn px-4 py-2 rounded-full text-xs font-mono uppercase tracking-wider bg-[#121212] text-neutral-400 hover:text-white border border-white/10 transition-all"
+          class="venture-filter-btn px-5 py-2.5 rounded-full text-xs font-mono uppercase tracking-wider text-neutral-400 hover:text-white transition-all"
         >
           Digital Media
         </button>
       </div>
 
-      <!-- Featured Ventures Grid (Asymmetric Editorial Cards) -->
+      <!-- Fluid Ventures Grid (Borderless cards with soft hover illumination) -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ventures-grid">
         {featuredVentures.map((v) => (
           <div data-venture-category={v.category.toLowerCase()}>
@@ -274,15 +250,16 @@ const otherVentures = ventures.filter(v => !v.featured);
         ))}
       </div>
 
-      <!-- Portfolio Bottom Action Note -->
-      <div class="mt-16 p-8 rounded-xl bg-[#121212] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-2xl">
-        <div class="space-y-1">
-          <h4 class="text-lg font-bold text-white">Have an initiative aligned with our venture ecosystem?</h4>
+      <!-- Fluid Action Card (No harsh box border) -->
+      <div class="mt-20 p-10 sm:p-14 rounded-3xl bg-gradient-to-r from-white/[0.04] via-white/[0.02] to-transparent backdrop-blur-xl flex flex-col md:flex-row items-center justify-between gap-8 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-64 h-64 bg-hst-red/[0.08] rounded-full blur-3xl pointer-events-none"></div>
+        <div class="space-y-2 relative z-10 max-w-xl">
+          <h4 class="text-2xl font-bold text-white tracking-tight">Have an initiative aligned with our venture ecosystem?</h4>
           <p class="text-sm text-neutral-400">We actively evaluate technical partnerships, co-build initiatives, and foundational architectures.</p>
         </div>
         <a
           href={getPath('/contact')}
-          class="px-6 py-3.5 text-xs font-semibold tracking-wider uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-sm transition-colors whitespace-nowrap shadow-lg shadow-hst-red/25"
+          class="relative z-10 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all whitespace-nowrap shadow-xl shadow-hst-red/30 hover:scale-105 active:scale-95"
         >
           Initiate Venture Dialog
         </a>
@@ -292,10 +269,10 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 03. TECHNICAL CAPABILITIES (Deep Black #000000 / #121212 Cards)           -->
+  <!-- 03. TECHNICAL CAPABILITIES (Fluid Open Columns — No Boxes)               -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white border-b border-white/10" id="capabilities-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="capabilities-section">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <SectionHeader 
         eyebrow="// 03 Technical Competency"
@@ -305,32 +282,29 @@ const otherVentures = ventures.filter(v => !v.featured);
         className="mb-16"
       />
 
-      <!-- Capabilities Grid (6 items) -->
+      <!-- 6 Fluid Competency Cards -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {capabilities.map((cap) => (
-          <div class="p-8 rounded-xl border border-white/10 bg-[#121212] hover:border-hst-red/50 hover:bg-[#161616] hover:shadow-2xl hover:shadow-hst-red/5 transition-all duration-300 flex flex-col justify-between group">
+          <div class="card-fluid p-8 rounded-2xl flex flex-col justify-between group hover:-translate-y-1.5 transition-all">
             <div>
-              <div class="flex items-center justify-between pb-6 mb-6 border-b border-white/10">
-                <span class="text-xs font-mono font-bold text-hst-red">{cap.number}</span>
-                <span class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-hst-red transition-colors"></span>
+              <div class="flex items-center justify-between mb-6">
+                <span class="text-2xl font-mono font-extrabold text-hst-red">{cap.number}</span>
+                <span class="w-2 h-2 rounded-full bg-white/20 group-hover:bg-hst-red transition-colors shadow-[0_0_8px_rgba(255,38,38,0.6)]"></span>
               </div>
-              <h3 class="text-xl font-bold tracking-tight text-white mb-3 group-hover:text-hst-red transition-colors">
+              <h3 class="text-xl sm:text-2xl font-bold tracking-tight text-white mb-3 group-hover:text-white transition-colors">
                 {cap.title}
               </h3>
-              <p class="text-sm text-neutral-400 leading-relaxed mb-6">
+              <p class="text-sm text-neutral-400 leading-relaxed mb-8">
                 {cap.description}
               </p>
             </div>
             
-            <div class="pt-4 border-t border-white/10">
-              <span class="text-[11px] font-mono uppercase tracking-wider text-neutral-500 block mb-2">Disciplines</span>
-              <div class="flex flex-wrap gap-1.5">
-                {cap.subDisciplines.map((sub) => (
-                  <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-white/5 border border-white/5 text-neutral-300">
-                    {sub}
-                  </span>
-                ))}
-              </div>
+            <div class="pt-4 flex flex-wrap gap-2">
+              {cap.subDisciplines.map((sub) => (
+                <span class="text-[11px] font-mono px-2.5 py-1 rounded-full bg-white/[0.04] text-neutral-300 group-hover:bg-white/[0.08] transition-colors">
+                  {sub}
+                </span>
+              ))}
             </div>
           </div>
         ))}
@@ -340,10 +314,10 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 04. OPERATING METHODOLOGY (Rigorous 4-Phase Lifecycle on #000000)          -->
+  <!-- 04. OPERATING METHODOLOGY (Continuous Connected Laser Pipeline)          -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white border-b border-white/10" id="approach-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="approach-section">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       
       <SectionHeader 
         eyebrow="// 04 Engineering Methodology"
@@ -353,22 +327,23 @@ const otherVentures = ventures.filter(v => !v.featured);
         className="mb-16"
       />
 
-      <!-- Steps: Horizontal on Desktop, Vertical on Mobile -->
+      <!-- Continuous Laser Track connecting all 4 phases -->
+      <div class="laser-track mb-12 hidden lg:block"></div>
+
+      <!-- 4 Stages Timeline -->
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
         {approachSteps.map((step) => (
-          <div class="relative p-6 sm:p-8 rounded-xl border border-white/10 bg-[#121212] hover:border-hst-red/40 hover:bg-[#161616] flex flex-col justify-between space-y-6 transition-all">
-            <!-- Step Number Tag -->
+          <div class="card-fluid p-7 rounded-2xl flex flex-col justify-between space-y-6 group hover:-translate-y-1 transition-all">
             <div class="flex items-center justify-between">
               <span class="text-3xl font-extrabold font-mono text-hst-red tracking-tight">
                 {step.step}
               </span>
-              <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-500">
+              <span class="text-[10px] font-mono uppercase tracking-widest text-neutral-400">
                 Phase
               </span>
             </div>
 
-            <!-- Title & Description -->
-            <div class="space-y-3">
+            <div class="space-y-2">
               <h3 class="text-lg font-bold text-white tracking-tight">
                 {step.title}
               </h3>
@@ -377,10 +352,9 @@ const otherVentures = ventures.filter(v => !v.featured);
               </p>
             </div>
 
-            <!-- Deliverable footer -->
-            <div class="pt-4 border-t border-white/10">
-              <span class="text-[10px] font-mono uppercase text-neutral-500 block mb-1">Standard</span>
-              <span class="text-xs text-neutral-300 font-mono font-medium">{step.deliverables}</span>
+            <div class="pt-3">
+              <span class="text-[10px] font-mono uppercase text-neutral-500 block mb-1">Standard Output</span>
+              <span class="text-xs text-neutral-200 font-mono font-medium">{step.deliverables}</span>
             </div>
           </div>
         ))}
@@ -390,66 +364,63 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 05. FOUNDER & LEADERSHIP (Cyber-Editorial Frame on #000000)               -->
+  <!-- 05. FOUNDER & LEADERSHIP (Grand Open-Canvas Cinematic Presentation)      -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white border-b border-white/10" id="founder-section">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-28 lg:py-40 bg-[#000000] text-white relative overflow-hidden" id="founder-section">
+    <!-- Ambient Radial Spotlight behind portrait -->
+    <div class="absolute top-1/2 left-1/4 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-hst-red/[0.12] rounded-full blur-[160px] pointer-events-none"></div>
+
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
         
-        <!-- Left: Founder Editorial Portrait Card with Official SVG (col-span-5) -->
-        <div class="lg:col-span-5 relative">
-          <div class="relative rounded-2xl overflow-hidden border border-white/15 bg-[#121212] shadow-2xl group hover:border-hst-red/50 transition-all">
-            
-            <!-- Corner Precision Brackets -->
-            <div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-hst-red z-20 pointer-events-none"></div>
-
+        <!-- Left: Open-Canvas Founder Portrait (Zero harsh box border) -->
+        <div class="lg:col-span-5 relative flex justify-center">
+          <div class="relative rounded-3xl overflow-hidden shadow-2xl group max-w-md w-full">
             <img 
               src={getPath(founderData.photoPath)} 
               alt={`${founderData.name} — Founder, HackerSpace Technologies`}
-              class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-102"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               loading="lazy"
               width="800"
               height="800"
             />
             
-            <!-- Bottom Overlay Tag -->
-            <div class="absolute bottom-0 inset-x-0 p-6 bg-gradient-to-t from-black via-black/85 to-transparent text-white z-10">
+            <!-- Bottom Seamless Gradient Vignette -->
+            <div class="absolute bottom-0 inset-x-0 p-8 bg-gradient-to-t from-black via-black/80 to-transparent text-white">
               <span class="text-[11px] font-mono tracking-widest uppercase text-hst-red font-semibold block">
                 Lead Architect &amp; Founder
               </span>
-              <h3 class="text-xl font-bold tracking-tight text-white mt-0.5">
+              <h3 class="text-2xl font-bold tracking-tight text-white mt-1">
                 {founderData.name}
               </h3>
-              <p class="text-xs text-neutral-400 font-mono mt-1">
+              <p class="text-xs text-neutral-400 font-mono mt-0.5">
                 HackerSpace Technologies
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Right: Narrative & Philosophy (col-span-7) -->
+        <!-- Right: Narrative & Philosophy -->
         <div class="lg:col-span-7 space-y-8">
-          <div class="inline-flex items-center gap-2 text-xs font-mono tracking-widest uppercase text-hst-red font-semibold">
-            <span>// 05</span>
-            <span>Founder &amp; Leadership</span>
+          <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 text-xs font-mono tracking-widest uppercase rounded-full bg-white/[0.05] text-neutral-300 w-fit">
+            <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
+            <span>// 05 Founder &amp; Leadership</span>
           </div>
 
-          <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight leading-tight text-white">
+          <h2 class="text-4xl sm:text-6xl font-extrabold tracking-[-0.03em] leading-tight text-white">
             {founderData.name}
           </h2>
 
-          <blockquote class="p-6 border-l-4 border-hst-red bg-[#121212] rounded-r-xl text-lg sm:text-xl font-medium text-neutral-200 leading-snug">
+          <blockquote class="p-8 rounded-2xl bg-white/[0.03] backdrop-blur-md text-xl sm:text-2xl font-medium text-neutral-200 leading-snug relative overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-hst-red rounded-full"></div>
             “{founderData.tagline}”
           </blockquote>
 
-          <div class="space-y-4 text-neutral-300 leading-relaxed text-base sm:text-lg">
+          <div class="space-y-4 text-neutral-400 leading-relaxed text-base sm:text-lg">
             <p>
               {founderData.intro}
             </p>
-            <p class="text-neutral-400 text-sm sm:text-base">
+            <p class="text-neutral-500 text-sm sm:text-base">
               {founderData.philosophy}
             </p>
           </div>
@@ -457,7 +428,7 @@ const otherVentures = ventures.filter(v => !v.featured);
           <div class="pt-4 flex flex-wrap items-center gap-6">
             <a
               href={getPath('/founder')}
-              class="inline-flex items-center gap-2 px-6 py-3.5 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-sm transition-colors shadow-lg shadow-hst-red/25"
+              class="inline-flex items-center gap-2 px-8 py-4 text-xs font-bold tracking-widest uppercase text-white bg-hst-red hover:bg-hst-red-hover rounded-full transition-all shadow-xl shadow-hst-red/30 hover:scale-105 active:scale-95"
             >
               <span>Read Full Founder Biography</span>
               <span>→</span>
@@ -465,7 +436,7 @@ const otherVentures = ventures.filter(v => !v.featured);
 
             <a
               href={getPath('/contact')}
-              class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-300 hover:text-white hover:underline"
+              class="inline-flex items-center gap-1.5 text-xs font-mono font-semibold uppercase tracking-wider text-neutral-300 hover:text-white transition-colors"
             >
               <span>Direct Inquiries</span>
               <span>↗</span>
@@ -478,9 +449,9 @@ const otherVentures = ventures.filter(v => !v.featured);
   </section>
 
   <!-- ========================================================================= -->
-  <!-- 06. HORIZON STATEMENT & HIGH-CONVERSION CONTACT (Deep Black #000000)       -->
+  <!-- 06. HIGH-CONVERSION CONTACT (Seamless Borderless Enclosure)                -->
   <!-- ========================================================================= -->
-  <section class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden bg-grid-subtle-dark border-b border-white/10" id="contact-section">
+  <section class="py-28 lg:py-36 bg-[#000000] text-white relative overflow-hidden" id="contact-section">
     <!-- Ambient Red Gradient Glow (Enclosed) -->
     <div class="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
       <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-hst-red/10 rounded-full blur-[160px]"></div>
@@ -490,7 +461,7 @@ const otherVentures = ventures.filter(v => !v.featured);
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         <!-- Left: Inquiry Description (col-span-5) -->
-        <div class="lg:col-span-5 space-y-6">
+        <div class="lg:col-span-5 space-y-8">
           <SectionHeader 
             eyebrow="// 06 Dialogue"
             title="Have an Idea Worth Building?"
@@ -498,33 +469,33 @@ const otherVentures = ventures.filter(v => !v.featured);
             theme="dark"
           />
 
-          <div class="space-y-4 pt-6 border-t border-white/10 text-sm text-neutral-400">
-            <div class="flex items-start gap-3">
-              <span class="text-hst-red font-mono font-bold">01</span>
+          <div class="space-y-6 pt-4 text-sm text-neutral-400">
+            <div class="flex items-start gap-4">
+              <span class="text-hst-red font-mono font-bold text-base">01</span>
               <div>
-                <strong class="text-white block font-semibold">Strategic Collaborations</strong>
+                <strong class="text-white block font-semibold text-base mb-1">Strategic Collaborations</strong>
                 <span>Joint venture exploration across software and urban electric mobility.</span>
               </div>
             </div>
-            <div class="flex items-start gap-3">
-              <span class="text-hst-red font-mono font-bold">02</span>
+            <div class="flex items-start gap-4">
+              <span class="text-hst-red font-mono font-bold text-base">02</span>
               <div>
-                <strong class="text-white block font-semibold">Product Pilot Opportunities</strong>
+                <strong class="text-white block font-semibold text-base mb-1">Product Pilot Opportunities</strong>
                 <span>Early organizational deployment of platforms like SurveySpace.</span>
               </div>
             </div>
-            <div class="flex items-start gap-3">
-              <span class="text-hst-red font-mono font-bold">03</span>
+            <div class="flex items-start gap-4">
+              <span class="text-hst-red font-mono font-bold text-base">03</span>
               <div>
-                <strong class="text-white block font-semibold">Media &amp; Speaking</strong>
+                <strong class="text-white block font-semibold text-base mb-1">Media &amp; Speaking</strong>
                 <span>Direct press inquiries and technical conference keynotes.</span>
               </div>
             </div>
           </div>
 
-          <div class="p-6 rounded-xl bg-[#121212] border border-white/10 shadow-xl">
+          <div class="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md">
             <span class="text-xs font-mono uppercase tracking-wider text-neutral-400 block mb-1">Direct Postal / Mail Dispatch</span>
-            <a href="mailto:contact@hackerspace.technologies" class="text-sm font-mono font-bold text-white hover:text-hst-red transition-colors">
+            <a href="mailto:contact@hackerspace.technologies" class="text-base font-mono font-bold text-white hover:text-hst-red transition-colors">
               contact@hackerspace.technologies
             </a>
           </div>
@@ -553,11 +524,11 @@ const otherVentures = ventures.filter(v => !v.featured);
 
           // Toggle button styles
           filterButtons.forEach(b => {
-            b.classList.remove('bg-hst-red', 'text-white', 'shadow-md', 'shadow-hst-red/20');
-            b.classList.add('bg-[#121212]', 'text-neutral-400', 'border', 'border-white/10');
+            b.classList.remove('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
+            b.classList.add('text-neutral-400');
           });
-          btn.classList.add('bg-hst-red', 'text-white', 'shadow-md', 'shadow-hst-red/20');
-          btn.classList.remove('bg-[#121212]', 'text-neutral-400', 'border', 'border-white/10');
+          btn.classList.add('bg-hst-red', 'text-white', 'shadow-lg', 'shadow-hst-red/30');
+          btn.classList.remove('text-neutral-400');
 
           // Filter card visibility
           cards.forEach(card => {

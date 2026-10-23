@@ -10,11 +10,11 @@ const { theme = 'dark', id = 'contact-form' } = Astro.props;
 const isDark = theme !== 'light';
 ---
 
-<div class={`p-6 sm:p-10 rounded-xl border ${
-  isDark ? 'bg-[#121212] border-white/10 shadow-2xl' : 'bg-white border-neutral-200 shadow-sm'
+<div class={`p-6 sm:p-10 rounded-2xl ${
+  isDark ? 'bg-gradient-to-b from-white/[0.04] to-white/[0.01] shadow-2xl backdrop-blur-xl' : 'bg-white shadow-sm'
 }`}>
   <div class="mb-8">
-    <h3 class={`text-2xl font-bold tracking-tight mb-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
+    <h3 class={`text-2xl sm:text-3xl font-bold tracking-tight mb-2 ${isDark ? 'text-white' : 'text-neutral-900'}`}>
       Initiate an Inquiry
     </h3>
     <p class={`text-sm ${isDark ? 'text-neutral-400' : 'text-neutral-600'}`}>
@@ -43,9 +43,9 @@ const isDark = theme !== 'light';
           name="name"
           required
           placeholder="Alex / Lakshmi"
-          class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
+          class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
+              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -64,9 +64,9 @@ const isDark = theme !== 'light';
           name="email"
           required
           placeholder="name@domain.com"
-          class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
+          class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
+              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -87,9 +87,9 @@ const isDark = theme !== 'light';
           id="organization"
           name="organization"
           placeholder="Company or institution"
-          class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
+          class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#181818] border-white/10 text-white placeholder-neutral-500 focus:border-hst-red' 
+              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
           }`}
         />
@@ -104,9 +104,9 @@ const isDark = theme !== 'light';
         <select
           id="inquiryType"
           name="inquiryType"
-          class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
+          class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
             isDark 
-              ? 'bg-[#181818] border-white/10 text-white focus:border-hst-red' 
+              ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white' 
               : 'bg-neutral-50 border-neutral-300 text-neutral-900 focus:border-transparent'
           }`}
         >
@@ -130,9 +130,9 @@ const isDark = theme !== 'light';
         required
         rows={4}
         placeholder="Describe the opportunity, technical inquiry, or collaboration idea..."
-        class={`w-full px-4 py-3 text-sm rounded-md border transition-colors focus:outline-none focus:ring-2 focus:ring-hst-red ${
+        class={`w-full px-4 py-3.5 text-sm rounded-xl transition-all focus:outline-none focus:ring-1 focus:ring-hst-red ${
           isDark 
-            ? 'bg-[#151518] border-white/15 text-white placeholder-neutral-600 focus:border-transparent' 
+            ? 'bg-white/[0.05] focus:bg-white/[0.08] text-white placeholder-neutral-500' 
             : 'bg-neutral-50 border-neutral-300 text-neutral-900 placeholder-neutral-400 focus:border-transparent'
         }`}
       ></textarea>

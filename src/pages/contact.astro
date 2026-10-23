@@ -30,16 +30,20 @@ const faqs = [
   theme="dark"
 >
   <!-- Page Header -->
-  <section class="py-20 lg:py-28 bg-[#000000] text-white border-b border-white/10 bg-grid-subtle-dark">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden bg-grid-subtle-dark">
+    <!-- Ambient Radial Glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,38,38,0.2),transparent_75%)] pointer-events-none"></div>
+
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] text-xs font-mono tracking-widest uppercase text-neutral-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
           <span>// Official Channels</span>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08]">
+        <h1 class="text-5xl sm:text-7xl font-extrabold tracking-[-0.04em] leading-[1.04] text-gradient-silver">
           Have an Idea Worth Building?
         </h1>
-        <p class="text-lg sm:text-xl text-neutral-300 leading-relaxed font-normal">
+        <p class="text-xl sm:text-2xl text-neutral-400 leading-relaxed font-normal">
           Direct communication channels for strategic partnerships, product inquiries, media requests, and collaborative ventures.
         </p>
       </div>
@@ -47,25 +51,25 @@ const faqs = [
   </section>
 
   <!-- Main Contact Section -->
-  <section class="py-24 bg-[#000000] text-white border-b border-white/10">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 bg-[#000000] text-white relative overflow-hidden">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         <!-- Left: Channels & Info (lg:col-span-5) -->
         <div class="lg:col-span-5 space-y-8">
           <div class="space-y-3">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">01 / Direct Desk</span>
-            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               Corporate Headquarters
             </h2>
-            <p class="text-sm text-neutral-400 leading-relaxed">
+            <p class="text-base text-neutral-400 leading-relaxed">
               We maintain a focused, digital-first operational model with regional physical operations across South Asia.
             </p>
           </div>
 
-          <!-- Contact Details Cards -->
+          <!-- Contact Details Cards (Borderless Fluid) -->
           <div class="space-y-4">
-            <div class="p-6 rounded-xl bg-[#121212] border border-white/10 space-y-2 shadow-xl">
+            <div class="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md space-y-2">
               <span class="text-[11px] font-mono uppercase tracking-wider text-neutral-400 block">General &amp; Technical Inquiries</span>
               <a href="mailto:contact@hackerspace.technologies" class="text-base font-mono font-bold text-white hover:text-hst-red transition-colors block">
                 contact@hackerspace.technologies
@@ -73,15 +77,15 @@ const faqs = [
               <span class="text-xs text-neutral-500">Monitored directly by HST leadership.</span>
             </div>
 
-            <div class="p-6 rounded-xl bg-[#121212] border border-white/10 space-y-2 shadow-xl">
+            <div class="p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md space-y-2">
               <span class="text-[11px] font-mono uppercase tracking-wider text-neutral-400 block">Operating Region</span>
-              <span class="text-sm font-semibold text-white block">India • Global Remote Operations</span>
+              <span class="text-base font-semibold text-white block">India • Global Remote Operations</span>
               <span class="text-xs text-neutral-500">Transit advertising and EV operations rooted in major regional centers.</span>
             </div>
           </div>
 
           <!-- Inquiry Guidance -->
-          <div class="p-6 rounded-xl bg-[#161616] text-white space-y-3 border border-white/10 shadow-2xl">
+          <div class="p-8 rounded-3xl bg-gradient-to-b from-white/[0.04] to-transparent text-white space-y-3">
             <span class="text-xs font-mono uppercase text-hst-red font-bold tracking-widest block">
               Inquiry Protocol
             </span>
@@ -101,22 +105,22 @@ const faqs = [
   </section>
 
   <!-- Frequently Asked Questions -->
-  <section class="py-20 bg-[#000000] text-white">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="max-w-3xl mb-12">
+  <section class="py-24 bg-[#000000] text-white relative overflow-hidden">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-3xl mb-14">
         <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">02 / Guidance</span>
-        <h2 class="text-3xl font-extrabold tracking-tight text-white mt-1">
+        <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mt-2">
           Frequently Asked Questions
         </h2>
       </div>
 
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         {faqs.map((faq) => (
-          <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 hover:bg-[#161616] transition-all space-y-3 shadow-xl">
-            <h3 class="text-base font-bold text-white leading-snug">
+          <div class="card-fluid p-8 rounded-2xl space-y-3">
+            <h3 class="text-lg font-bold text-white leading-snug">
               {faq.q}
             </h3>
-            <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            <p class="text-sm text-neutral-400 leading-relaxed">
               {faq.a}
             </p>
           </div>

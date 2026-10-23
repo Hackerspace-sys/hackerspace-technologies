@@ -20,7 +20,7 @@ function isActive(href: string): boolean {
 
 <header 
   id="main-header"
-  class="sticky top-0 z-50 w-full transition-all duration-300 border-b border-white/10 bg-[#000000]/85 backdrop-blur-xl"
+  class="sticky top-0 z-50 w-full transition-all duration-300 bg-[#000000]/75 backdrop-blur-2xl border-b border-white/[0.04]"
   data-theme={theme}
 >
   <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
@@ -56,15 +56,12 @@ function isActive(href: string): boolean {
     <div class="hidden md:flex items-center gap-4">
       <a
         href={getPath('/contact')}
-        class="group relative inline-flex items-center justify-center px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white bg-transparent border border-white/20 hover:border-hst-red transition-all duration-300 overflow-hidden focus-visible:ring-2 focus-visible:ring-hst-red"
+        class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-semibold tracking-wider uppercase text-white bg-white/[0.08] hover:bg-hst-red transition-all duration-300 rounded-full shadow-lg hover:shadow-hst-red/25 focus-visible:ring-2 focus-visible:ring-hst-red"
       >
-        <span class="absolute inset-0 bg-hst-red translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
-        <span class="relative z-10 flex items-center gap-2">
-          Let's Connect
-          <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
-          </svg>
-        </span>
+        <span>Let's Connect</span>
+        <svg class="w-3.5 h-3.5 transition-transform duration-300 group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+        </svg>
       </a>
     </div>
 

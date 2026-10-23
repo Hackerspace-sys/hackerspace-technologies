@@ -11,46 +11,44 @@ import { getPath } from '../utils/paths';
   theme="dark"
 >
   <!-- Page Header -->
-  <section class="py-20 lg:py-28 bg-[#000000] text-white border-b border-white/10 bg-grid-subtle-dark">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <section class="py-24 lg:py-32 bg-[#000000] text-white relative overflow-hidden bg-grid-subtle-dark">
+    <!-- Ambient Radial Glow -->
+    <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[450px] bg-[radial-gradient(ellipse_60%_50%_at_50%_0%,rgba(255,38,38,0.2),transparent_75%)] pointer-events-none"></div>
+
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="max-w-3xl space-y-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+        <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-white/[0.05] text-xs font-mono tracking-widest uppercase text-neutral-300">
+          <span class="w-1.5 h-1.5 rounded-full bg-hst-red animate-pulse"></span>
           <span>// Leadership &amp; Vision</span>
         </div>
-        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08]">
+        <h1 class="text-5xl sm:text-7xl font-extrabold tracking-[-0.04em] leading-[1.04] text-gradient-silver">
           {founderData.name}
         </h1>
-        <p class="text-lg sm:text-2xl text-neutral-300 font-normal leading-relaxed">
+        <p class="text-xl sm:text-2xl text-neutral-400 font-normal leading-relaxed">
           {founderData.title} • {founderData.company}
         </p>
       </div>
     </div>
   </section>
 
-  <!-- Split Narrative & Portrait Section -->
-  <section class="py-24 bg-[#000000] text-white border-b border-white/10">
-    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+  <!-- Split Narrative & Portrait Section (Fluid, Zero Box Borders) -->
+  <section class="py-24 bg-[#000000] text-white relative overflow-hidden">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
         
         <!-- Left Portrait (lg:col-span-5) -->
         <div class="lg:col-span-5 sticky top-28">
-          <div class="rounded-2xl overflow-hidden border border-white/15 bg-[#121212] shadow-2xl relative group hover:border-hst-red/40 transition-all">
-            <!-- Corner Precision Crosshairs -->
-            <div class="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-hst-red z-20 pointer-events-none"></div>
-            <div class="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-hst-red z-20 pointer-events-none"></div>
-
+          <div class="rounded-3xl overflow-hidden shadow-2xl relative group">
             <img
               src={getPath(founderData.photoPath)}
               alt={`${founderData.name} — Founder, HackerSpace Technologies`}
-              class="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-102"
+              class="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
               width="800"
               height="800"
             />
           </div>
           
-          <div class="mt-6 p-6 rounded-xl bg-[#121212] border border-white/10 space-y-3 shadow-xl">
+          <div class="mt-6 p-6 rounded-2xl bg-white/[0.03] backdrop-blur-md space-y-3">
             <span class="text-xs font-mono font-bold uppercase tracking-wider text-hst-red block">
               Direct Communication
             </span>
@@ -71,7 +69,8 @@ import { getPath } from '../utils/paths';
         <div class="lg:col-span-7 space-y-12">
           
           <!-- Personal Philosophy Quote -->
-          <div class="p-8 rounded-xl bg-[#121212] text-white border border-white/10 space-y-4 shadow-xl">
+          <div class="p-8 sm:p-10 rounded-2xl bg-white/[0.03] backdrop-blur-md text-white space-y-4 relative overflow-hidden">
+            <div class="absolute left-0 top-0 bottom-0 w-1 bg-hst-red rounded-full"></div>
             <span class="text-xs font-mono font-bold uppercase text-hst-red tracking-widest block">
               Core Personal Tenet
             </span>
@@ -86,38 +85,38 @@ import { getPath } from '../utils/paths';
           <!-- Section 1: Origin & Motivation -->
           <div class="space-y-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">01 / Motivation</span>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               The Genesis of HackerSpace Technologies
             </h2>
-            <p class="text-base sm:text-lg text-neutral-300 leading-relaxed">
+            <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
               {founderData.biography.origin}
             </p>
-            <p class="text-base sm:text-lg text-neutral-300 leading-relaxed">
+            <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
               {founderData.biography.vision}
             </p>
           </div>
 
           <!-- Section 2: Building Standard -->
-          <div class="space-y-4 pt-4 border-t border-white/10">
+          <div class="space-y-4 pt-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">02 / Methodology</span>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               The Product-Building Standard
             </h2>
-            <p class="text-base sm:text-lg text-neutral-300 leading-relaxed">
+            <p class="text-base sm:text-lg text-neutral-400 leading-relaxed">
               {founderData.biography.approach}
             </p>
           </div>
 
           <!-- Section 3: Current Focus Areas -->
-          <div class="space-y-6 pt-4 border-t border-white/10">
+          <div class="space-y-6 pt-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">03 / Active Pursuits</span>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               Current Engineering Focus Areas
             </h2>
             
             <div class="space-y-4">
               {founderData.biography.focusAreas.map((area, idx) => (
-                <div class="p-6 rounded-xl border border-white/10 bg-[#121212] hover:border-hst-red/40 hover:bg-[#161616] transition-all">
+                <div class="p-6 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] transition-all">
                   <div class="flex items-center gap-3 mb-2">
                     <span class="text-xs font-mono font-bold text-hst-red">0{idx + 1}</span>
                     <h3 class="text-base font-bold text-white">{area.title}</h3>
@@ -131,15 +130,15 @@ import { getPath } from '../utils/paths';
           </div>
 
           <!-- Section 4: Founder Principles -->
-          <div class="space-y-6 pt-4 border-t border-white/10">
+          <div class="space-y-6 pt-4">
             <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">04 / Tenets</span>
-            <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+            <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white">
               Operating Principles
             </h2>
             
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {founderData.principles.map((pr) => (
-                <div class="p-6 rounded-xl bg-[#121212] border border-white/10 hover:border-hst-red/40 transition-colors space-y-2">
+                <div class="p-6 rounded-2xl bg-white/[0.03] hover:bg-white/[0.06] transition-all space-y-2">
                   <span class="text-xs font-mono font-bold text-hst-red block">{pr.number}</span>
                   <h3 class="text-sm font-bold text-white uppercase">{pr.title}</h3>
                   <p class="text-xs text-neutral-400 leading-relaxed">{pr.statement}</p>
