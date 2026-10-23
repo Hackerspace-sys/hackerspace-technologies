@@ -1,0 +1,57 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Logo from '../components/Logo.astro';
+---
+
+<BaseLayout
+  title="404 — Page Not Found | HackerSpace Technologies"
+  description="The requested resource could not be found within the HackerSpace Technologies directory."
+  theme="dark"
+>
+  <section class="min-h-[75vh] flex items-center justify-center bg-[#050505] text-white py-24 bg-grid-subtle-dark relative overflow-hidden">
+    <!-- Ambient Red Glow -->
+    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-hst-red/10 rounded-full blur-[140px] pointer-events-none" />
+
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center space-y-8">
+      
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+        <span>ERROR CODE // 404</span>
+      </div>
+
+      <div class="space-y-4">
+        <h1 class="text-7xl sm:text-9xl font-extrabold font-mono tracking-tight text-white/90">
+          4<span class="text-hst-red">0</span>4
+        </h1>
+        <h2 class="text-2xl sm:text-3xl font-bold tracking-tight text-white">
+          Signal Undetected. Endpoint Missing.
+        </h2>
+        <p class="text-sm sm:text-base text-neutral-400 max-w-md mx-auto leading-relaxed">
+          The requested path does not exist or has been restructured within our venture architecture.
+        </p>
+      </div>
+
+      <!-- Quick Action Navigation -->
+      <div class="pt-4 flex flex-wrap items-center justify-center gap-4">
+        <a
+          href="/"
+          class="px-6 py-3.5 text-xs font-bold uppercase tracking-widest text-white bg-hst-red hover:bg-hst-red-hover transition-colors rounded-sm shadow-lg shadow-hst-red/20"
+        >
+          Return to HQ Home
+        </a>
+        <a
+          href="/ventures"
+          class="px-6 py-3.5 text-xs font-semibold uppercase tracking-widest text-neutral-300 hover:text-white border border-white/20 hover:border-white transition-colors rounded-sm"
+        >
+          Explore Ventures
+        </a>
+        <a
+          href="/contact"
+          class="px-6 py-3.5 text-xs font-semibold uppercase tracking-widest text-neutral-300 hover:text-white border border-white/20 hover:border-white transition-colors rounded-sm"
+        >
+          Contact Desk
+        </a>
+      </div>
+
+    </div>
+  </section>
+</BaseLayout>

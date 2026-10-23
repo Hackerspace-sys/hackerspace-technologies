@@ -1,0 +1,95 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+@layer base {
+  :root {
+    --color-hst-red: #FF2626;
+    --color-hst-red-glow: rgba(255, 38, 38, 0.2);
+    --color-pure-black: #050505;
+    --color-graphite: #111111;
+    --color-charcoal: #191919;
+    --color-surface-dark: #141416;
+    --color-neutral-gray: #777777;
+    --color-light-gray: #E8E8E8;
+    --color-pure-white: #FFFFFF;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background-color: #050505;
+    color: #111111;
+  }
+
+  body {
+    min-height: 100vh;
+    overflow-x: hidden;
+    background-color: #FFFFFF;
+  }
+
+  ::selection {
+    background-color: #FF2626;
+    color: #FFFFFF;
+  }
+
+  /* Accessible focus indicators */
+  :focus-visible {
+    outline: 2px solid #FF2626;
+    outline-offset: 3px;
+  }
+
+  /* Skip to main content accessibility link */
+  .skip-link {
+    position: absolute;
+    top: -100px;
+    left: 1rem;
+    background-color: #FF2626;
+    color: #FFFFFF;
+    padding: 0.75rem 1.5rem;
+    font-weight: 600;
+    z-index: 9999;
+    transition: top 0.2s ease-in-out;
+    border-radius: 4px;
+  }
+
+  .skip-link:focus {
+    top: 1rem;
+  }
+}
+
+@layer utilities {
+  /* Editorial subtle grid textures */
+  .bg-grid-subtle-dark {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  }
+
+  .bg-grid-subtle-light {
+    background-size: 40px 40px;
+    background-image: 
+      linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

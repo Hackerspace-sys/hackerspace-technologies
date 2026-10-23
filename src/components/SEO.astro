@@ -1,0 +1,88 @@
+---
+import { siteConfig } from '../data/site';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  type?: 'website' | 'article' | 'profile';
+  schemaData?: Record<string, any>;
+}
+
+const {
+  title = siteConfig.name + " — " + siteConfig.tagline,
+  description = siteConfig.description,
+  canonicalUrl = Astro.url.href,
+  ogImage = `${siteConfig.url}/brand/hst-logo.svg`,
+  type = 'website',
+  schemaData
+} = Astro.props;
+
+const fullTitle = title.includes(siteConfig.shortName) || title.includes(siteConfig.name) 
+  ? title 
+  : `${title} | ${siteConfig.shortName}`;
+
+// Base Organization Schema
+const defaultOrganizationSchema = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "HackerSpace Technologies",
+  "alternateName": "HST",
+  "url": siteConfig.url,
+  "logo": `${siteConfig.url}/brand/hst-logo.svg`,
+  "description": siteConfig.description,
+  "founder": {
+    "@type": "Person",
+    "name": "Krishna Attipatla",
+    "jobTitle": "Founder"
+  },
+  "knowsAbout": [
+    "Software Engineering",
+    "Product Architecture",
+    "Electric Mobility",
+    "Intelligent Software",
+    "Transit Advertising"
+  ]
+};
+
+const finalSchema = schemaData || defaultOrganizationSchema;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="generator" content={Astro.generator} />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="sitemap" href="/sitemap-index.xml" />
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- Primary Meta Tags -->
+<title>{fullTitle}</title>
+<meta name="title" content={fullTitle} />
+<meta name="description" content={description} />
+<meta name="author" content="HackerSpace Technologies" />
+<meta name="theme-color" content="#050505" />
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content={type} />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:title" content={fullTitle} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+<meta property="og:site_name" content="HackerSpace Technologies" />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalUrl} />
+<meta property="twitter:title" content={fullTitle} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={ogImage} />
+
+<!-- Fonts Preconnect -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<!-- Structured Data -->
+<script type="application/ld+json" set:html={JSON.stringify(finalSchema)} />

@@ -1,0 +1,229 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SectionHeader from '../../components/SectionHeader.astro';
+import VentureCard from '../../components/VentureCard.astro';
+import { ventures } from '../../data/ventures';
+---
+
+<BaseLayout
+  title="Ventures Ecosystem — HackerSpace Technologies"
+  description="Explore the full venture portfolio of HackerSpace Technologies across software platforms, urban transit media, clean electric mobility, and applied artificial intelligence."
+  theme="dark"
+>
+  <!-- Page Header -->
+  <section class="py-20 lg:py-28 bg-[#050505] text-white border-b border-white/10 bg-grid-subtle-dark">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+          <span>// Portfolio Directory</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08]">
+          The HST Venture Ecosystem
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-300 leading-relaxed font-normal">
+          An editorial index of products, operating businesses, and research initiatives built and stewarded by HackerSpace Technologies.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Portfolio Directory -->
+  <section class="py-20 bg-[#F8F8FA] min-h-[70vh]">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      
+      <!-- Filter Controls Bar -->
+      <div class="mb-12 flex flex-col md:flex-row md:items-center justify-between gap-6 pb-8 border-b border-neutral-200">
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap items-center gap-2" id="category-filters" role="tablist">
+          <button
+            type="button"
+            data-filter="all"
+            class="filter-btn active px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-neutral-900 text-white border-neutral-900"
+          >
+            All Ventures ({ventures.length})
+          </button>
+          <button
+            type="button"
+            data-filter="software"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+          >
+            Software
+          </button>
+          <button
+            type="button"
+            data-filter="mobility"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+          >
+            Mobility &amp; Transit
+          </button>
+          <button
+            type="button"
+            data-filter="ai"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+          >
+            Applied AI
+          </button>
+          <button
+            type="button"
+            data-filter="energy"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+          >
+            Clean Energy
+          </button>
+          <button
+            type="button"
+            data-filter="wellness"
+            class="filter-btn px-4 py-2 text-xs font-mono font-semibold uppercase tracking-wider rounded-md border transition-all duration-200 bg-white text-neutral-700 border-neutral-200 hover:border-neutral-400"
+          >
+            Wellness &amp; Media
+          </button>
+        </div>
+
+        <!-- Quick Search Bar -->
+        <div class="w-full md:w-72 relative">
+          <input
+            type="text"
+            id="venture-search"
+            placeholder="Search by keyword, tag..."
+            class="w-full px-4 py-2.5 text-xs font-mono rounded-md border border-neutral-300 bg-white text-neutral-900 placeholder-neutral-400 focus:outline-none focus:ring-2 focus:ring-hst-red"
+            aria-label="Search ventures"
+          />
+          <span class="absolute right-3 top-3 text-neutral-400 text-xs">⌕</span>
+        </div>
+      </div>
+
+      <!-- Ventures Grid -->
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="ventures-container">
+        {ventures.map((v) => (
+          <div 
+            class="venture-item-wrapper" 
+            data-category={v.categorySlug}
+            data-status={v.statusType}
+            data-keywords={`${v.name} ${v.category} ${v.oneLiner} ${v.techDisciplines.join(' ')}`.toLowerCase()}
+          >
+            <VentureCard venture={v} theme="light" />
+          </div>
+        ))}
+      </div>
+
+      <!-- Empty State -->
+      <div id="no-results" class="hidden py-16 text-center space-y-4">
+        <p class="text-sm font-mono text-neutral-500 uppercase tracking-wider">
+          No ventures match your filter criteria.
+        </p>
+        <button
+          type="button"
+          id="reset-filters"
+          class="px-4 py-2 text-xs font-mono font-semibold text-hst-red border border-hst-red/30 rounded hover:bg-hst-red/5"
+        >
+          Reset Filters
+        </button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Venture Studio Standards Note -->
+  <section class="py-16 bg-white border-t border-neutral-200">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="p-8 rounded-xl bg-neutral-900 text-white flex flex-col md:flex-row items-center justify-between gap-8">
+        <div class="space-y-2 max-w-2xl">
+          <div class="flex items-center gap-2 text-xs font-mono text-hst-red uppercase">
+            <span>●</span>
+            <span>Venture Lifecycle Governance</span>
+          </div>
+          <h3 class="text-xl font-bold">Rigorous Stage Classification</h3>
+          <p class="text-xs sm:text-sm text-neutral-400 leading-relaxed">
+            HackerSpace Technologies strictly distinguishes between active commercial entities (such as TotoAdsIndia), live production platforms (SurveySpace), engineering prototypes, and research concepts. We do not represent concepts as operational businesses.
+          </p>
+        </div>
+        <a
+          href="/contact"
+          class="px-6 py-3 text-xs font-semibold uppercase tracking-wider bg-hst-red hover:bg-hst-red-hover text-white rounded-sm whitespace-nowrap transition-colors"
+        >
+          Partnership Inquiries
+        </a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  function setupVenturesFilter() {
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('venture-search') as HTMLInputElement | null;
+    const items = document.querySelectorAll('.venture-item-wrapper') as NodeListOf<HTMLElement>;
+    const noResults = document.getElementById('no-results');
+    const resetBtn = document.getElementById('reset-filters');
+
+    if (!items.length) return;
+
+    let activeFilter = 'all';
+    let searchQuery = '';
+
+    function applyFilters() {
+      let visibleCount = 0;
+
+      items.forEach((item) => {
+        const cat = item.dataset.category || '';
+        const keywords = item.dataset.keywords || '';
+
+        const matchesCat = activeFilter === 'all' || 
+          (activeFilter === 'wellness' && (cat === 'wellness' || cat === 'media')) ||
+          cat === activeFilter;
+
+        const matchesSearch = !searchQuery || keywords.includes(searchQuery.toLowerCase());
+
+        if (matchesCat && matchesSearch) {
+          item.classList.remove('hidden');
+          visibleCount++;
+        } else {
+          item.classList.add('hidden');
+        }
+      });
+
+      if (noResults) {
+        if (visibleCount === 0) {
+          noResults.classList.remove('hidden');
+        } else {
+          noResults.classList.add('hidden');
+        }
+      }
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => {
+          b.classList.remove('bg-neutral-900', 'text-white', 'border-neutral-900');
+          b.classList.add('bg-white', 'text-neutral-700', 'border-neutral-200');
+        });
+
+        btn.classList.remove('bg-white', 'text-neutral-700', 'border-neutral-200');
+        btn.classList.add('bg-neutral-900', 'text-white', 'border-neutral-900');
+
+        activeFilter = btn.getAttribute('data-filter') || 'all';
+        applyFilters();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = (e.target as HTMLInputElement).value.trim();
+        applyFilters();
+      });
+    }
+
+    if (resetBtn) {
+      resetBtn.addEventListener('click', () => {
+        activeFilter = 'all';
+        searchQuery = '';
+        if (searchInput) searchInput.value = '';
+        const allBtn = document.querySelector('[data-filter="all"]') as HTMLElement | null;
+        allBtn?.click();
+      });
+    }
+  }
+
+  setupVenturesFilter();
+  document.addEventListener('astro:page-load', setupVenturesFilter);
+</script>

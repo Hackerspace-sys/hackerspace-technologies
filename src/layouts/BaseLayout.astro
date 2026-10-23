@@ -1,0 +1,57 @@
+---
+import SEO from '../components/SEO.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+
+interface Props {
+  title?: string;
+  description?: string;
+  canonicalUrl?: string;
+  ogImage?: string;
+  type?: 'website' | 'article' | 'profile';
+  schemaData?: Record<string, any>;
+  theme?: 'dark' | 'light';
+}
+
+const {
+  title,
+  description,
+  canonicalUrl,
+  ogImage,
+  type = 'website',
+  schemaData,
+  theme = 'dark'
+} = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <SEO 
+      title={title}
+      description={description}
+      canonicalUrl={canonicalUrl}
+      ogImage={ogImage}
+      type={type}
+      schemaData={schemaData}
+    />
+  </head>
+  <body class="min-h-screen flex flex-col bg-white text-neutral-900 selection:bg-hst-red selection:text-white">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">
+      Skip to main content
+    </a>
+
+    <!-- Top Global Header -->
+    <Header theme={theme} />
+
+    <!-- Main Content Slot -->
+    <main id="main-content" class="flex-grow focus:outline-none" tabindex="-1">
+      <slot />
+    </main>
+
+    <!-- Global Footer -->
+    <Footer />
+  </body>
+</html>

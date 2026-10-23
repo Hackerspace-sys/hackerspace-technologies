@@ -1,0 +1,127 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHeader from '../components/SectionHeader.astro';
+import ContactForm from '../components/ContactForm.astro';
+import { siteConfig } from '../data/site';
+
+const faqs = [
+  {
+    q: "How does HackerSpace Technologies evaluate new partnerships?",
+    a: "We evaluate partnerships based on first-principles alignment, engineering feasibility, and whether a meaningful problem is being solved. We engage when there is genuine mutual conviction."
+  },
+  {
+    q: "Can organizations pilot products like SurveySpace?",
+    a: "Yes. SurveySpace and select software initiatives run pilot programs for academic institutions, market researchers, and enterprise teams seeking high-velocity feedback systems."
+  },
+  {
+    q: "How do brands collaborate with TotoAdsIndia?",
+    a: "Brands can run street-level transit campaigns on our commercial electric auto-rickshaw network. Campaigns are planned based on urban corridor density, route mapping, and duration."
+  },
+  {
+    q: "What is the typical response timeline for inquiries?",
+    a: "All verified technical, venture, and corporate inquiries receive a deliberate human response within two business days directly from our engineering or leadership team."
+  }
+];
+---
+
+<BaseLayout
+  title="Contact & Collaboration — HackerSpace Technologies"
+  description="Connect with HackerSpace Technologies. Inquiries regarding venture partnerships, product collaborations, enterprise pilots, and strategic discussions."
+  theme="dark"
+>
+  <!-- Page Header -->
+  <section class="py-20 lg:py-28 bg-[#050505] text-white border-b border-white/10 bg-grid-subtle-dark">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl space-y-6">
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/5 border border-white/10 text-xs font-mono tracking-widest uppercase text-hst-red">
+          <span>// Official Channels</span>
+        </div>
+        <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight leading-[1.08]">
+          Have an Idea Worth Building?
+        </h1>
+        <p class="text-lg sm:text-xl text-neutral-300 leading-relaxed font-normal">
+          Direct communication channels for strategic partnerships, product inquiries, media requests, and collaborative ventures.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Contact Section -->
+  <section class="py-24 bg-white text-neutral-900 border-b border-neutral-200">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        
+        <!-- Left: Channels & Info (lg:col-span-5) -->
+        <div class="lg:col-span-5 space-y-8">
+          <div class="space-y-3">
+            <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">01 / Direct Desk</span>
+            <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight text-neutral-950">
+              Corporate Headquarters
+            </h2>
+            <p class="text-sm text-neutral-600 leading-relaxed">
+              We maintain a focused, digital-first operational model with regional physical operations across South Asia.
+            </p>
+          </div>
+
+          <!-- Contact Details Cards -->
+          <div class="space-y-4">
+            <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200 space-y-2">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-neutral-500 block">General &amp; Technical Inquiries</span>
+              <a href="mailto:contact@hackerspace.technologies" class="text-base font-mono font-bold text-neutral-900 hover:text-hst-red transition-colors block">
+                contact@hackerspace.technologies
+              </a>
+              <span class="text-xs text-neutral-500">Monitored directly by HST leadership.</span>
+            </div>
+
+            <div class="p-6 rounded-lg bg-neutral-50 border border-neutral-200 space-y-2">
+              <span class="text-[11px] font-mono uppercase tracking-wider text-neutral-500 block">Operating Region</span>
+              <span class="text-sm font-semibold text-neutral-900 block">India • Global Remote Operations</span>
+              <span class="text-xs text-neutral-500">Transit advertising and EV operations rooted in major regional centers.</span>
+            </div>
+          </div>
+
+          <!-- Inquiry Guidance -->
+          <div class="p-6 rounded-lg bg-neutral-950 text-white space-y-3 border border-neutral-800">
+            <span class="text-xs font-mono uppercase text-hst-red font-bold tracking-widest block">
+              Inquiry Protocol
+            </span>
+            <p class="text-xs text-neutral-300 leading-relaxed">
+              To ensure prompt evaluation, please include: your organization background, the specific venture or discipline of interest, and the tangible outcome you envision.
+            </p>
+          </div>
+        </div>
+
+        <!-- Right: Contact Form (lg:col-span-7) -->
+        <div class="lg:col-span-7">
+          <ContactForm theme="light" id="dedicated-contact-form" />
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Frequently Asked Questions -->
+  <section class="py-20 bg-[#F8F8FA]">
+    <div class="max-w-site mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="max-w-3xl mb-12">
+        <span class="text-xs font-mono font-bold uppercase tracking-widest text-hst-red">02 / Guidance</span>
+        <h2 class="text-3xl font-extrabold tracking-tight text-neutral-950 mt-1">
+          Frequently Asked Questions
+        </h2>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {faqs.map((faq) => (
+          <div class="p-6 rounded-lg bg-white border border-neutral-200 space-y-3">
+            <h3 class="text-base font-bold text-neutral-900 leading-snug">
+              {faq.q}
+            </h3>
+            <p class="text-xs sm:text-sm text-neutral-600 leading-relaxed">
+              {faq.a}
+            </p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>
